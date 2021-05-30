@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using HarmonyLib;
 using UnityEngine.UI;
+using HarmonyLib;
 
 namespace SolastaLevel20.Patches
 {
