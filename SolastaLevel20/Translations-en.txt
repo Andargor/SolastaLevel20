@@ -1,0 +1,2 @@
+SolastaLevel20/&FancySkeletonTitle	Fancy Skeleton
+SolastaLevel20/&FancySkeletonDescription	I'm a fancy skeleton
