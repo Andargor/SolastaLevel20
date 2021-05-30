@@ -9,9 +9,8 @@ namespace SolastaLevel20.Rules.Classes
     {
         public static void Load()
         {
-            var x = AdditionalDamagePaladinImprovedDivineSmite;
             var features = new List<FeatureUnlockByLevel> {
-                new FeatureUnlockByLevel(x, 11),
+                new FeatureUnlockByLevel(AdditionalDamagePaladinImprovedDivineSmite, 11),
                 new FeatureUnlockByLevel(FeatureSetAbilityScoreChoice, 12),
                 // TODO 14: Cleansing Touch
                 // TODO 15: Sacred Oath Feature

@@ -1,4 +1,6 @@
 Feedback/&AdditionalDamageImprovedDivineSmiteLine	{0} improved smites {1} (+{2})
+Feature/&RangerVanishActionTitle	Vanish
+Feature/&RangerVanishActionDescription	Starting at 14th level, you can use the Hide action as a bonus action on your turn.
 Feature/&AttributeModifierFighterIndomitable2Title	Indomitable (2)
 Feature/&AttributeModifierFighterIndomitable3Title	Indomitable (3)
 Feature/&PaladinImprovedDivineSmiteTitle	Improved Divine Smite

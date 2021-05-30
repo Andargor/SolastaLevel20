@@ -2,6 +2,7 @@
 using static SolastaLevel20.Rules.Features.PowerClericTurnUndeadBuilder;
 using static SolastaModApi.DatabaseHelper.CharacterClassDefinitions;
 using static SolastaModApi.DatabaseHelper.FeatureDefinitionFeatureSets;
+using static SolastaModApi.DatabaseHelper.FeatureDefinitionAttributeModifiers;
 
 namespace SolastaLevel20.Rules.Classes
 {
@@ -15,8 +16,8 @@ namespace SolastaLevel20.Rules.Classes
                 new FeatureUnlockByLevel(PowerClericTurnUndead14, 14),
                 new FeatureUnlockByLevel(FeatureSetAbilityScoreChoice, 16),
                 new FeatureUnlockByLevel(PowerClericTurnUndead17, 17),
+                new FeatureUnlockByLevel(AttributeModifierClericChannelDivinityAdd, 18),
                 // TODO 17: Divine Domain Feature
-                // TODO 18: Channel Divinity (3)
                 new FeatureUnlockByLevel(FeatureSetAbilityScoreChoice, 19)
                 // TODO 20: Divine Intervention Improvement
             };

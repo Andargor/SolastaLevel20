@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using static SolastaModApi.DatabaseHelper.CharacterClassDefinitions;
 using static SolastaModApi.DatabaseHelper.FeatureDefinitionFeatureSets;
+using static SolastaModApi.DatabaseHelper.FeatureDefinitionAdditionalActions;
 
 namespace SolastaLevel20.Rules.Classes
 {
@@ -9,7 +10,8 @@ namespace SolastaLevel20.Rules.Classes
         public static void Load()
         {
             List<FeatureUnlockByLevel> features = new List<FeatureUnlockByLevel> {
-                // TODO 11: Reliable Talent
+                new FeatureUnlockByLevel(FeatureSetAbilityScoreChoice, 10),
+                // TODO 11: Reliable Talent 
                 new FeatureUnlockByLevel(FeatureSetAbilityScoreChoice, 12),
                 // TODO 13: Roguish Archetype Feature
                 // TODO 14: Blindsense

@@ -1,6 +1,5 @@
 ﻿using SolastaModApi;
 using SolastaModApi.Extensions;
-using System;
 using static SolastaModApi.DatabaseHelper.FeatureDefinitionAdditionalDamages;
 
 namespace SolastaLevel20.Rules.Features

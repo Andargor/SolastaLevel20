@@ -1,6 +1,5 @@
 ﻿using SolastaModApi;
 using SolastaModApi.Extensions;
-using System;
 using static SolastaModApi.DatabaseHelper.FeatureDefinitionPowers;
 
 namespace SolastaLevel20.Rules.Features
@@ -14,8 +13,7 @@ namespace SolastaLevel20.Rules.Features
         const string PowerClericTurnUndead17Name = "PowerClericTurnUndead17";
         const string PowerClericTurnUndead17Guid = "b0ef65ba1e784628b1c5b4af75d4f395";
 
-        protected PowerClericTurnUndeadBuilder(string name, string guid, int challengeRating)
-            : base(PowerClericTurnUndead8, name, guid)
+        protected PowerClericTurnUndeadBuilder(string name, string guid, int challengeRating) : base(PowerClericTurnUndead8, name, guid)
         {
             Definition.EffectDescription.EffectForms[0].KillForm.SetChallengeRating(challengeRating);
         }
