@@ -5,12 +5,15 @@ using System.Reflection;
 using UnityModManagerNet;
 using HarmonyLib;
 using I2.Loc;
-using SolastaModApi;
+using SolastaLevel20.Rules.Classes;
+using SolastaLevel20.Rules.Features;
 
 namespace SolastaLevel20
 {
     public class Main
     {
+        public static int MAX_LEVEL = 20;
+
         [Conditional("DEBUG")]
         internal static void Log(string msg) => Logger.Log(msg);
         internal static void Error(Exception ex) => Logger?.Error(ex.ToString());
@@ -68,22 +71,25 @@ namespace SolastaLevel20
 
         internal static void ModEntryPoint()
         {
-            // example: use the ModApi to get a skeleton blueprint
-            //
-            var skeleton = DatabaseHelper.MonsterDefinitions.Skeleton;
+            // Cleric Features
+            PowerClericTurnUndead11.Load();
+            PowerClericTurnUndead14.Load();
+            PowerClericTurnUndead17.Load();
 
-            // example: how to add TEXTS to the game right
-            //
-            // . almost every game blueprint has a GuiPresentation attribute
-            // . GuiPresentation has a Title and a Description
-            // . Create an entry in Translations-en.txt for those (tab separated)
-            // . Refer to those entries when assigning values to these attributes
-            //
-            // . DON'T FORGET TO CLEAN UP THIS EXAMPLE AND Translations-en.txt file
-            // . ugly things will happen if you don't
-            //
-            skeleton.GuiPresentation.Title = "SolastaLevel20/&FancySkeletonTitle";
-            skeleton.GuiPresentation.Description = "SolastaLevel20/&FancySkeletonDescription";
+            // Fighter Features
+            AttributeModifierFighterIndomitable2.Load();
+            AttributeModifierFighterIndomitable3.Load();
+
+            // Paladin Features
+            AdditionalDamagePaladinImprovedDivineSmite.Load();
+
+            // Classes
+            Cleric.Load();
+            Fighter.Load();
+            Paladin.Load();
+            Ranger.Load();
+            Rogue.Load();
+            Wizard.Load();
         }
     }
 }

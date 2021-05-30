@@ -1,2 +1,5 @@
-SolastaLevel20/&FancySkeletonTitle	Fancy Skeleton
-SolastaLevel20/&FancySkeletonDescription	I'm a fancy skeleton
+Feedback/&AdditionalDamageImprovedDivineSmiteLine	{0} improved smites {1} (+{2})
+Feature/&AttributeModifierFighterIndomitable2	Indomitable (2)
+Feature/&AttributeModifierFighterIndomitable3	Indomitable (3)
+Feature/&PaladinImprovedDivineSmiteTitle	Improved Divine Smite
+Feature/&PaladinImprovedDivineSmiteDescription	By 11th level, you are so suffused with righteous might that all your melee weapon strikes carry divine power with them. Whenever you hit a creature with a melee weapon, the creature takes an extra 1d8 radiant damage.

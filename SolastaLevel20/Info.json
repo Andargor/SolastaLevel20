@@ -1,13 +1,13 @@
 {
 	"Id": "SolastaLevel20",
 	"DisplayName": "SolastaLevel20",
-	"Author": "SolastaMods",
+	"Author": "ThyWoof",
 	"Version": "0.0.1",
 	"ManagerVersion": "0.23.4",
-	"Requirements": [ "SolastaModApi" ],
-	"LoadAfter": [ "SolastaModApi" ],
+	"Requirements": [],
+	"LoadAfter": [],
 	"AssemblyName": "SolastaLevel20.dll",
 	"EntryMethod": "SolastaLevel20.Main.Load",
-	"Repository": "https://raw.githubusercontent.com/SolastaMods/SolastaLevel20/main/SolastaLevel20/Repository.json",
+	"Repository": "https://raw.githubusercontent.com/ThyWoof/SolastaLevel20/main/SolastaLevel20/Repository.json",
 	"HomePage": "https://www.nexusmods.com/solastacrownofthemagister/mods/##"
 }
