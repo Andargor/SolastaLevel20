@@ -2,6 +2,86 @@
 
 Attempt to bring all Solasta official heroes classes to level 20.
 
+## Classes:
+	- Cleric
+		. 11: Turn Undead (CR 2)
+		. 12: Ability Score Increase or Feat Choice
+		. 14: Turn Undead (CR 3)
+		. 16: Ability Score Increase or Feat Choice
+		. 17: Turn Undead (CR 4)
+		. 17: Divine Domain Feature [PLANNED]
+		. 18: Channel Divinity (3/rest)
+		. 19: Ability Score Increase or Feat Choice
+		. 20: Divine Intervention Improvement [PLANNED]
+
+	- Fighter
+		. 11: Extra Attack (2)
+		. 12: Ability Score Increase or Feat Choice
+		. 13: Indomitable (2)
+		. 14: Ability Score Increase or Feat Choice
+		. 15: Martial Archetype Feature [PLANNED]
+		. 16: Ability Score Increase or Feat Choice
+		. 17: Action Surge (2), Indomitable (3)
+		. 18: Martial Archetype Feature [PLANNED]
+		. 19: Ability Score Increase or Feat Choice
+		. 20: Extra Attack (3)
+
+	- Paladin
+		. 11: Improved Divine Smite
+		. 12: Ability Score Increase or Feat Choice
+		. 14: Cleasing Touch [PLANNED]
+		. 15: Sacred Oath Feature [PLANNED]
+		. 16: Ability Score Increase or Feat Choice
+		. 18: Aura Improvements [PLANNED]
+		. 19: Ability Score Increase or Feat Choice
+		. 20: Sacred Oath Feature [PLANNED]
+
+	- Ranger
+		. 11: Ranger Archetype Feature [PLANNED]
+		. 12: Ability Score Increase or Feat Choice
+		. 14: Favored Enemy Choice (2), Vanish
+		. 15: Ranger Archetype Feature [PLANNED]
+		. 16: Ability Score Increase or Feat Choice
+		. 18: Feral Senses [PLANNED]
+		. 19: Ability Score Increase or Feat Choice
+		. 20: Foe Slayer [PLANNED]
+
+	- Rogue
+		. 10: Ability Score Increase or Feat Choice
+		. 11: Reliable Talent [PLANNED]
+		. 12: Ability Score Increase or Feat Choice
+		. 13: Roguish Archetype Feature [PLANNED]
+		. 14: Blindsense [PLANNED]
+		. 15: Slippery Minds [PLANNED]
+		. 16: Ability Score Increase or Feat Choice
+		. 17: Roguish Archetype Feature [PLANNED]
+		. 18: Elusive [PLANNED]
+		. 19: Ability Score Increase or Feat Choice
+		. 20: Stroke of Luck [PLANNED]
+
+	- Wizard
+		. 12: Ability Score Increase or Feat Choice
+		. 14: Overchannel [PLANNED]
+		. 16: Ability Score Increase or Feat Choice
+		. 18: Spell Mastery [PLANNED]
+		. 19: Ability Score Increase or Feat Choice
+		. 20: Signature Spells [PLANNED]
+
+## Spells:
+
+	- Higher level spells are planned for both divine and arcane casters. [PLANNED]
+
+## Features:
+
+	- As close as possible to SRD if it makes sense in a cRPG. [PLANNED]
+
+## Current Patches:
+
+	- Game Manager - Safe entry point to extend / patch the game databases
+	- Characters Panel - Patched hard-coded test for level 10 on LevelUp button
+	- New Adventure Panel - Patched to remove constrainsts on min/max heroes levels when starting an adventure
+	- User Loccation Settings Modal - Patched to allow higher-level dungeons to be created
+
 # How to Compile
 
 0. Install all required development pre-requisites:
