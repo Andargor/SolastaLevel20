@@ -2,19 +2,19 @@
 
 	<PropertyGroup>
 		<TargetFramework>net472</TargetFramework>
-		<AssemblyVersion>0.0.2.0</AssemblyVersion>
-		<FileVersion>0.0.2.0</FileVersion>
+		<AssemblyVersion>0.0.3.0</AssemblyVersion>
+		<FileVersion>0.0.3.0</FileVersion>
 		<Description></Description>
-		<PackageProjectUrl>https://github.com/ThyWoof/SolastaLevel20</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/ThyWoof/SolastaLevel20</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/SolastaMods/SolastaLevel20</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/SolastaMods/SolastaLevel20</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<Configurations>Debug;Release;Debug Install;Release Install</Configurations>
-		<Authors>Zappastuff</Authors>
+		<Authors>ThyWoof;ImpPhil</Authors>
 		<Company />
 		<Product />
-		<Copyright>Copyright � 2020</Copyright>
+		<Copyright>Copyright 2021</Copyright>
 		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-		<Version>0.0.2</Version>
+		<Version>0.0.3</Version>
 	</PropertyGroup>
 
 	<Target Name="CheckEnvironmentVars">
@@ -45,11 +45,11 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-    <Reference Include="SolastaModApi">
-      <HintPath>$([System.IO.Path]::Combine($(SolastaInstallDir), 'Mods\SolastaModApi\SolastaModApi.dll'))</HintPath>
-      <Private>false</Private>
-    </Reference>
-    <Reference Include="Unity.Addressables">
+		<Reference Include="SolastaModApi">
+			<HintPath>$([System.IO.Path]::Combine($(SolastaInstallDir), 'Mods\SolastaModApi\SolastaModApi.dll'))</HintPath>
+			<Private>false</Private>
+		</Reference>
+    	<Reference Include="Unity.Addressables">
 			<HintPath>$([System.IO.Path]::Combine($(SolastaInstallDir), 'Solasta_Data\Managed\Unity.Addressables.dll'))</HintPath>
 			<Private>false</Private>
 		</Reference>
