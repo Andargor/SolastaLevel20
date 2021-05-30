@@ -8,6 +8,6 @@
 	"LoadAfter": [],
 	"AssemblyName": "SolastaLevel20.dll",
 	"EntryMethod": "SolastaLevel20.Main.Load",
-	"Repository": "https://raw.githubusercontent.com/ThyWoof/SolastaLevel20/main/SolastaLevel20/Repository.json",
-	"HomePage": "https://www.nexusmods.com/solastacrownofthemagister/mods/##"
+	"Repository": "https://raw.githubusercontent.com/SolastaMods/SolastaLevel20/main/SolastaLevel20/Repository.json",
+	"HomePage": "https://www.nexusmods.com/solastacrownofthemagister/mods/82"
 }
