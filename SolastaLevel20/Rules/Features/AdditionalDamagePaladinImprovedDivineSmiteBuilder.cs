@@ -23,7 +23,7 @@ namespace SolastaLevel20.Rules.Features
         public static FeatureDefinitionAdditionalDamage CreateAndAddToDB(string name, string guid)
             => new AdditionalDamagePaladinImprovedDivineSmiteBuilder(name, guid).AddToDB();
 
-        public static Lazy<FeatureDefinitionAdditionalDamage> AdditionalDamagePaladinImprovedDivineSmite
-            => new Lazy<FeatureDefinitionAdditionalDamage>(CreateAndAddToDB(AdditionalDamagePaladinImprovedDivineSmiteName, AdditionalDamagePaladinImprovedDivineSmiteGuid));
+        public static FeatureDefinitionAdditionalDamage AdditionalDamagePaladinImprovedDivineSmite
+            => CreateAndAddToDB(AdditionalDamagePaladinImprovedDivineSmiteName, AdditionalDamagePaladinImprovedDivineSmiteGuid);
     }
 }
