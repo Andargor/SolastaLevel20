@@ -1,12 +1,11 @@
 ﻿using System.Collections.Generic;
+using static SolastaModApi.DatabaseHelper.CharacterClassDefinitions;
+using static SolastaModApi.DatabaseHelper.FeatureDefinitionFeatureSets;
 
 namespace SolastaLevel20.Rules.Classes
 {
-    public static class Wizard
+    public static class WizardBuilder
     {
-        public static CharacterClassDefinition _Wizard => DatabaseRepository.GetDatabase<CharacterClassDefinition>().TryGetElement("Wizard", "a279003a65f95a64eb58fcc71463c734");
-        static FeatureDefinitionFeatureSet FeatureSetAbilityScoreChoice => DatabaseRepository.GetDatabase<FeatureDefinitionFeatureSet>().TryGetElement("FeatureSetAbilityScoreChoice", "0f791ae5a6ffdc742be023184a115e1d");
-
         public static void Load()
         {
             List<FeatureUnlockByLevel> features = new List<FeatureUnlockByLevel> {
@@ -17,7 +16,8 @@ namespace SolastaLevel20.Rules.Classes
                 new FeatureUnlockByLevel(FeatureSetAbilityScoreChoice, 19)
                 // TODO 20: Signature Spells
             };
-            _Wizard.FeatureUnlocks.AddRange(features);
+
+            Wizard.FeatureUnlocks.AddRange(features);
         }
     }
 }

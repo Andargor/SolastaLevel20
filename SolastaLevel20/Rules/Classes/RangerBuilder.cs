@@ -1,12 +1,11 @@
 ﻿using System.Collections.Generic;
+using static SolastaModApi.DatabaseHelper.CharacterClassDefinitions;
+using static SolastaModApi.DatabaseHelper.FeatureDefinitionFeatureSets;
 
 namespace SolastaLevel20.Rules.Classes
 {
-    public static class Ranger
+    public static class RangerBuilder
     {
-        static CharacterClassDefinition _Ranger => DatabaseRepository.GetDatabase<CharacterClassDefinition>().TryGetElement("Ranger", "d4cb9ea3b00ab6a4c9d3cd07aa199f40");
-        static FeatureDefinitionFeatureSet FeatureSetAbilityScoreChoice => DatabaseRepository.GetDatabase<FeatureDefinitionFeatureSet>().TryGetElement("FeatureSetAbilityScoreChoice", "0f791ae5a6ffdc742be023184a115e1d");
-
         public static void Load()
         {
             List<FeatureUnlockByLevel> features = new List<FeatureUnlockByLevel> {
@@ -20,7 +19,8 @@ namespace SolastaLevel20.Rules.Classes
                 new FeatureUnlockByLevel(FeatureSetAbilityScoreChoice, 19),
                 // TODO 20: Foe Slayer
             };
-            _Ranger.FeatureUnlocks.AddRange(features);
+
+            Ranger.FeatureUnlocks.AddRange(features);
         }
     }
 }

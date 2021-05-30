@@ -3,7 +3,6 @@ using static SolastaLevel20.Rules.Features.AdditionalDamagePaladinImprovedDivine
 using static SolastaModApi.DatabaseHelper.CharacterClassDefinitions;
 using static SolastaModApi.DatabaseHelper.FeatureDefinitionFeatureSets;
 
-
 namespace SolastaLevel20.Rules.Classes
 {
     public static class PaladinBuilder
@@ -20,6 +19,7 @@ namespace SolastaLevel20.Rules.Classes
                 new FeatureUnlockByLevel(FeatureSetAbilityScoreChoice, 19)
                 // TODO 20: Sacred Oath Feature
             };
+
             Paladin.FeatureUnlocks.AddRange(features);
         }
     }

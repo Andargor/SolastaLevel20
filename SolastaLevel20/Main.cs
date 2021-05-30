@@ -11,7 +11,7 @@ namespace SolastaLevel20
 {
     public class Main
     {
-        public static int MAX_LEVEL = 20;
+        public const int MAX_LEVEL = 20;
 
         [Conditional("DEBUG")]
         internal static void Log(string msg) => Logger.Log(msg);
@@ -70,13 +70,12 @@ namespace SolastaLevel20
 
         internal static void ModEntryPoint()
         {
-            // Classes
             ClericBuilder.Load();
             FighterBuilder.Load();
             PaladinBuilder.Load();
-            Ranger.Load();
-            Rogue.Load();
-            Wizard.Load();
+            RangerBuilder.Load();
+            RogueBuilder.Load();
+            WizardBuilder.Load();
         }
     }
 }

@@ -1,12 +1,11 @@
 ﻿using System.Collections.Generic;
+using static SolastaModApi.DatabaseHelper.CharacterClassDefinitions;
+using static SolastaModApi.DatabaseHelper.FeatureDefinitionFeatureSets;
 
 namespace SolastaLevel20.Rules.Classes
 {
-    class Rogue
+    class RogueBuilder
     {
-        static CharacterClassDefinition _Rogue => DatabaseRepository.GetDatabase<CharacterClassDefinition>().TryGetElement("Rogue", "8ae0dcdf1cf0a264c8198e0ca715eaf3");
-        static FeatureDefinitionFeatureSet FeatureSetAbilityScoreChoice => DatabaseRepository.GetDatabase<FeatureDefinitionFeatureSet>().TryGetElement("FeatureSetAbilityScoreChoice", "0f791ae5a6ffdc742be023184a115e1d");
-
         public static void Load()
         {
             List<FeatureUnlockByLevel> features = new List<FeatureUnlockByLevel> {
@@ -21,7 +20,8 @@ namespace SolastaLevel20.Rules.Classes
                 new FeatureUnlockByLevel(FeatureSetAbilityScoreChoice, 19)
                 // TODO 20: Stroke of Luck
             };
-            _Rogue.FeatureUnlocks.AddRange(features);
+
+            Rogue.FeatureUnlocks.AddRange(features);
         }
     }
 }

@@ -15,6 +15,8 @@ namespace SolastaLevel20.Rules.Features
 
         protected AttributeModifierFighterIndomitableBuilder(string name, string guid, int modifierValue) : base(AttributeModifierFighterIndomitable, name, guid)
         {
+            Definition.GuiPresentation.Title = $"Feature/&AttributeModifierFighterIndomitable{modifierValue}Title";
+
             Definition.SetModifierValue(modifierValue);
         }
 

@@ -18,11 +18,6 @@ namespace SolastaLevel20.Rules.Features
             Definition.SetDamageAdvancement(RuleDefinitions.AdditionalDamageAdvancement.None);
             Definition.SetNotificationTag("ImprovedDivineSmite");
             Definition.SetTriggerCondition(RuleDefinitions.AdditionalDamageTriggerCondition.AlwaysActive);
-
-            // not required initialized in FeatureDefinitionAdditionalDamage
-            // Definition.SetField("diceByRankTable", new List<DiceByRank>());
-            // Definition.SetField("familiesWithAdditionalDice", new List<string>());
-
         }
 
         public static FeatureDefinitionAdditionalDamage CreateAndAddToDB(string name, string guid)
