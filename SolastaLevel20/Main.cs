@@ -6,7 +6,6 @@ using UnityModManagerNet;
 using HarmonyLib;
 using I2.Loc;
 using SolastaLevel20.Rules.Classes;
-using SolastaLevel20.Rules.Features;
 
 namespace SolastaLevel20
 {
@@ -71,22 +70,10 @@ namespace SolastaLevel20
 
         internal static void ModEntryPoint()
         {
-            // Cleric Features
-            PowerClericTurnUndead11.Load();
-            PowerClericTurnUndead14.Load();
-            PowerClericTurnUndead17.Load();
-
-            // Fighter Features
-            AttributeModifierFighterIndomitable2.Load();
-            AttributeModifierFighterIndomitable3.Load();
-
-            // Paladin Features
-            AdditionalDamagePaladinImprovedDivineSmite.Load();
-
             // Classes
-            Cleric.Load();
-            Fighter.Load();
-            Paladin.Load();
+            ClericBuilder.Load();
+            FighterBuilder.Load();
+            PaladinBuilder.Load();
             Ranger.Load();
             Rogue.Load();
             Wizard.Load();

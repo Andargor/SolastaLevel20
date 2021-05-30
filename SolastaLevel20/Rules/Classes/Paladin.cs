@@ -1,19 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using HarmonyLib;
+﻿using System.Collections.Generic;
+using static SolastaLevel20.Rules.Features.AdditionalDamagePaladinImprovedDivineSmiteBuilder;
+using static SolastaModApi.DatabaseHelper.CharacterClassDefinitions;
+using static SolastaModApi.DatabaseHelper.FeatureDefinitionFeatureSets;
+
 
 namespace SolastaLevel20.Rules.Classes
 {
-    public static class Paladin
+    public static class PaladinBuilder
     {
-        public static CharacterClassDefinition _Paladin => DatabaseRepository.GetDatabase<CharacterClassDefinition>().TryGetElement("Paladin", "");
-        static FeatureDefinitionFeatureSet FeatureSetAbilityScoreChoice => DatabaseRepository.GetDatabase<FeatureDefinitionFeatureSet>().TryGetElement("FeatureSetAbilityScoreChoice", "");
-        static FeatureDefinitionAdditionalDamage AdditionalDamagePaladinImprovedDivineSmite => DatabaseRepository.GetDatabase<FeatureDefinitionAdditionalDamage>().TryGetElement("AdditionalDamagePaladinImprovedDivineSmite", "");
-
         public static void Load()
         {
-            List<FeatureUnlockByLevel> features = new List<FeatureUnlockByLevel> {
-                new FeatureUnlockByLevel(AdditionalDamagePaladinImprovedDivineSmite, 11),
+            var features = new List<FeatureUnlockByLevel> {
+                new FeatureUnlockByLevel(AdditionalDamagePaladinImprovedDivineSmite.Value, 11),
                 new FeatureUnlockByLevel(FeatureSetAbilityScoreChoice, 12),
                 // TODO 14: Cleansing Touch
                 // TODO 15: Sacred Oath Feature
@@ -22,7 +20,7 @@ namespace SolastaLevel20.Rules.Classes
                 new FeatureUnlockByLevel(FeatureSetAbilityScoreChoice, 19)
                 // TODO 20: Sacred Oath Feature
             };
-            _Paladin.FeatureUnlocks.AddRange(features);
+            Paladin.FeatureUnlocks.AddRange(features);
         }
     }
 }
