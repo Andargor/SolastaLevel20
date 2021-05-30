@@ -1,6 +1,6 @@
 # SolastaLevel20
 
-My Mod Description
+Attempt to bring all Solasta official heroes classes to level 20.
 
 # How to Compile
 

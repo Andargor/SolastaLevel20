@@ -22,7 +22,7 @@ namespace SolastaLevel20.Rules.Features
             AccessTools.Field(additionalDamagePaladinImprovedDivineSmite.GetType(), "notificationTag").SetValue(additionalDamagePaladinImprovedDivineSmite, "ImprovedDivineSmite");
             AccessTools.Field(additionalDamagePaladinImprovedDivineSmite.GetType(), "triggerCondition").SetValue(additionalDamagePaladinImprovedDivineSmite, RuleDefinitions.AdditionalDamageTriggerCondition.AlwaysActive);
             
-            DatabaseRepository.GetDatabase<FeatureDefinition>().Add(additionalDamagePaladinImprovedDivineSmite);
+            DatabaseRepository.GetDatabase<FeatureDefinitionAdditionalDamage>().Add(additionalDamagePaladinImprovedDivineSmite);
         }
     }
 }

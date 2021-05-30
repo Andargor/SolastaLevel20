@@ -4,7 +4,7 @@ namespace SolastaLevel20.Rules.Features
 {
     public static class PowerClericTurnUndead14
     {
-        static FeatureDefinitionPower PowerClericTurnUndead8 => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerClericTurnUndead8", "6fd2d50bba7337a43b4034a75d077911");
+        static FeatureDefinitionPower PowerClericTurnUndead8 => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerClericTurnUndead8", "");
 
         public static void Load()
         {
@@ -13,7 +13,7 @@ namespace SolastaLevel20.Rules.Features
             powerClericTurnUndead11.name = "PowerClericTurnUndead14";
             KillForm killForm = powerClericTurnUndead11.EffectDescription.EffectForms[0].KillForm;
             AccessTools.Field(killForm.GetType(), "challengeRating").SetValue(killForm, 3);
-            DatabaseRepository.GetDatabase<FeatureDefinition>().Add(powerClericTurnUndead11);
+            DatabaseRepository.GetDatabase<FeatureDefinitionPower>().Add(powerClericTurnUndead11);
         }
     }
 }

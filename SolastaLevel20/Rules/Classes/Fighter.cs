@@ -11,7 +11,7 @@ namespace SolastaLevel20.Rules.Classes
         static FeatureDefinitionAttributeModifier AttributeModifierFighterIndomitable2 => DatabaseRepository.GetDatabase<FeatureDefinitionAttributeModifier>().TryGetElement("AttributeModifierFighterIndomitable2", "");
         static FeatureDefinitionAttributeModifier AttributeModifierFighterIndomitable3 => DatabaseRepository.GetDatabase<FeatureDefinitionAttributeModifier>().TryGetElement("AttributeModifierFighterIndomitable3", "");
         static FeatureDefinitionFeatureSet FeatureSetAbilityScoreChoice => DatabaseRepository.GetDatabase<FeatureDefinitionFeatureSet>().TryGetElement("FeatureSetAbilityScoreChoice", "");
-        static FeatureDefinitionFeatureSet PowerFighterActionSurge => DatabaseRepository.GetDatabase<FeatureDefinitionFeatureSet>().TryGetElement("PowerFighterActionSurge", "");
+        static FeatureDefinitionPower PowerFighterActionSurge => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerFighterActionSurge", "");
 
         public static void Load()
         {
