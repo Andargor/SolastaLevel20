@@ -69,6 +69,8 @@ Attempt to bring all Solasta official heroes classes to level 20.
 
 ## Spells:
 
+These spells were added at higher levels but still need to hack the Character Panel to offer them.
+
 	- Cleric:
 		. 06: Contagion
 		. 06: Dispel Evil and Good
