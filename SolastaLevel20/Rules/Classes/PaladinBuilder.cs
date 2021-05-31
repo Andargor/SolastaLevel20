@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
-using static SolastaLevel20.Rules.Features.AdditionalDamagePaladinImprovedDivineSmiteBuilder;
 using static SolastaModApi.DatabaseHelper.CharacterClassDefinitions;
+using static SolastaModApi.DatabaseHelper.SpellListDefinitions;
+using static SolastaModApi.DatabaseHelper.SpellDefinitions;
 using static SolastaModApi.DatabaseHelper.FeatureDefinitionFeatureSets;
+using static SolastaLevel20.Rules.Features.AdditionalDamagePaladinImprovedDivineSmiteBuilder;
 
 namespace SolastaLevel20.Rules.Classes
 {
@@ -21,6 +23,21 @@ namespace SolastaLevel20.Rules.Classes
             };
 
             Paladin.FeatureUnlocks.AddRange(features);
+
+            // add missing spells to Paladin
+            var spellListPaladin4th = SpellListPaladin.SpellsByLevel.Find(x => x.Level == 4);
+            spellListPaladin4th.Spells.AddRange(new List<SpellDefinition>
+                {
+                    // Banishement
+                    DeathWard
+                });
+
+            //var spellListPaladin5th = SpellListPaladin.SpellsByLevel.Find(x => x.Level == 5);
+            //spellListPaladin5th.Spells.AddRange(new List<SpellDefinition>
+            //    {
+            //        // Dispel Evil and Good
+            //        // Raise Dead
+            //    });
         }
     }
 }

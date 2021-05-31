@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using static SolastaModApi.DatabaseHelper.CharacterClassDefinitions;
+using static SolastaModApi.DatabaseHelper.SpellListDefinitions;
+using static SolastaModApi.DatabaseHelper.SpellDefinitions;
 using static SolastaModApi.DatabaseHelper.FeatureDefinitionFeatureSets;
 using static SolastaLevel20.Rules.Features.ActionAffinityRangerVanishActionBuilder;
 
@@ -22,6 +24,19 @@ namespace SolastaLevel20.Rules.Classes
             };
 
             Ranger.FeatureUnlocks.AddRange(features);
+
+            SpellListDefinition.SpellsByLevelDuplet ranger4th = new SpellListDefinition.SpellsByLevelDuplet
+            {
+                Level = 4,
+                Spells = new List<SpellDefinition>
+                {
+                    ConjureElemental,
+                    FreedomOfMovement,
+                    Stoneskin
+                }
+            };
+
+            SpellListRanger.SpellsByLevel.Add(ranger4th);
         }
     }
 }
