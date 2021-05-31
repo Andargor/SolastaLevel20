@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-// ActionAffinityRogueCunningAction
-using SolastaModApi;
-using SolastaModApi.Extensions;
+﻿using SolastaModApi;
 using static SolastaModApi.DatabaseHelper.FeatureDefinitionActionAffinitys;
 using static SolastaModApi.DatabaseHelper.ActionDefinitions;
 
@@ -25,7 +18,7 @@ namespace SolastaLevel20.Rules.Features
             Definition.AuthorizedActions.Add(HideBonus.Id);
         }
 
-        public static FeatureDefinitionActionAffinity CreateAndAddToDB(string name, string guid)
+        private static FeatureDefinitionActionAffinity CreateAndAddToDB(string name, string guid)
             => new ActionAffinityRangerVanishActionBuilder(name, guid).AddToDB();
 
         public static FeatureDefinitionActionAffinity ActionAffinityRangerVanishAction

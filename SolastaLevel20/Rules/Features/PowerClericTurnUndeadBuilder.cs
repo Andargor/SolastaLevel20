@@ -18,7 +18,7 @@ namespace SolastaLevel20.Rules.Features
             Definition.EffectDescription.EffectForms[0].KillForm.SetChallengeRating(challengeRating);
         }
 
-        public static FeatureDefinitionPower CreateAndAddToDB(string name, string guid, int challengeRating)
+        private static FeatureDefinitionPower CreateAndAddToDB(string name, string guid, int challengeRating)
             => new PowerClericTurnUndeadBuilder(name, guid, challengeRating).AddToDB();
 
         public static FeatureDefinitionPower PowerClericTurnUndead11 =>

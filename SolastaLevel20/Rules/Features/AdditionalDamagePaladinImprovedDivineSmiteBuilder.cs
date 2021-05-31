@@ -19,7 +19,7 @@ namespace SolastaLevel20.Rules.Features
             Definition.SetTriggerCondition(RuleDefinitions.AdditionalDamageTriggerCondition.AlwaysActive);
         }
 
-        public static FeatureDefinitionAdditionalDamage CreateAndAddToDB(string name, string guid)
+        private static FeatureDefinitionAdditionalDamage CreateAndAddToDB(string name, string guid)
             => new AdditionalDamagePaladinImprovedDivineSmiteBuilder(name, guid).AddToDB();
 
         public static FeatureDefinitionAdditionalDamage AdditionalDamagePaladinImprovedDivineSmite

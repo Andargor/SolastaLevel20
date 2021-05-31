@@ -19,7 +19,7 @@ namespace SolastaLevel20.Rules.Features
             Definition.SetModifierValue(modifierValue);
         }
 
-        public static FeatureDefinitionAttributeModifier CreateAndAddToDB(string name, string guid, int modifierValue)
+        private static FeatureDefinitionAttributeModifier CreateAndAddToDB(string name, string guid, int modifierValue)
             => new AttributeModifierFighterIndomitableBuilder(name, guid, modifierValue).AddToDB();
 
         public static FeatureDefinitionAttributeModifier AttributeModifierFighterIndomitable2 => 
