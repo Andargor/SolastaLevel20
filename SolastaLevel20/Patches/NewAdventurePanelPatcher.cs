@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using static SolastaModApi.Extensions.CampaignDefinitionExtensions;
 
 namespace SolastaLevel20.Patches
 {
@@ -11,8 +12,8 @@ namespace SolastaLevel20.Patches
             {
                 if (campaignDefinition != null)
                 {
-                    AccessTools.Field(campaignDefinition.GetType(), "minLevel").SetValue(campaignDefinition, 1);
-                    AccessTools.Field(campaignDefinition.GetType(), "maxLevel").SetValue(campaignDefinition, Main.MAX_LEVEL);
+                    campaignDefinition.SetMinLevel<CampaignDefinition>(1);
+                    campaignDefinition.SetMaxLevel<CampaignDefinition>(Main.MAX_LEVEL);
                 }
             }
         }
