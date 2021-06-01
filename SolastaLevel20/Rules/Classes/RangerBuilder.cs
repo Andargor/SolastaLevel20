@@ -1,17 +1,43 @@
 ﻿using System.Collections.Generic;
 using static SolastaModApi.DatabaseHelper.CharacterClassDefinitions;
-using static SolastaModApi.DatabaseHelper.SpellListDefinitions;
-using static SolastaModApi.DatabaseHelper.SpellDefinitions;
+using static SolastaModApi.DatabaseHelper.FeatureDefinitionCastSpells;
 using static SolastaModApi.DatabaseHelper.FeatureDefinitionFeatureSets;
+using static SolastaModApi.DatabaseHelper.SpellDefinitions;
+using static SolastaModApi.DatabaseHelper.SpellListDefinitions;
+using static SolastaModApi.Extensions.SpellListDefinitionExtensions;
 using static SolastaLevel20.Rules.Features.ActionAffinityRangerVanishActionBuilder;
 
 namespace SolastaLevel20.Rules.Classes
 {
     public static class RangerBuilder
     {
+        private static readonly List<List<int>> Slots = new List<List<int>>
+        {
+            new List<int> {0,0,0,0},
+            new List<int> {2,2,0,0},
+            new List<int> {3,3,0,0},
+            new List<int> {3,3,0,0},
+            new List<int> {4,4,2,0},
+            new List<int> {4,4,2,0},
+            new List<int> {5,4,3,0},
+            new List<int> {5,4,3,0},
+            new List<int> {6,4,3,2},
+            new List<int> {6,4,3,2},
+            new List<int> {7,4,3,3},
+            new List<int> {7,4,3,3},
+            new List<int> {8,4,3,3},
+            new List<int> {8,4,3,3},
+            new List<int> {9,4,3,3},
+            new List<int> {9,4,3,3},
+            new List<int> {10,4,3,3},
+            new List<int> {10,4,3,3},
+            new List<int> {11,4,3,3},
+            new List<int> {11,4,3,3},
+        };
         public static void Load()
         {
-            List<FeatureUnlockByLevel> features = new List<FeatureUnlockByLevel> {
+            // add missing progression
+            Ranger.FeatureUnlocks.AddRange(new List<FeatureUnlockByLevel> {
                 // TODO 11: Ranger Archetype Feature
                 new FeatureUnlockByLevel(FeatureSetAbilityScoreChoice, 12),
                 new FeatureUnlockByLevel(AdditionalDamageRangerFavoredEnemyChoice, 14),
@@ -21,11 +47,18 @@ namespace SolastaLevel20.Rules.Classes
                 // TODO 18: Feral Senses
                 new FeatureUnlockByLevel(FeatureSetAbilityScoreChoice, 19),
                 // TODO 20: Foe Slayer
-            };
+            });
 
-            Ranger.FeatureUnlocks.AddRange(features);
+            // add missing spell slots
+            foreach (var slot in CastSpellRanger.SlotsPerLevels)
+            {
+                slot.Slots = Slots[slot.Level - 1];
+            }
+            SpellListRanger.SetMaxSpellLevel<SpellListDefinition>(Slots[0].Count);
 
-            SpellListDefinition.SpellsByLevelDuplet ranger4th = new SpellListDefinition.SpellsByLevelDuplet
+            // add missing spells
+            SpellListRanger.SpellsByLevel.RemoveAll(x => x.Level == 4);
+            SpellListRanger.SpellsByLevel.Add(new SpellListDefinition.SpellsByLevelDuplet
             {
                 Level = 4,
                 Spells = new List<SpellDefinition>
@@ -34,9 +67,7 @@ namespace SolastaLevel20.Rules.Classes
                     FreedomOfMovement,
                     Stoneskin
                 }
-            };
-
-            SpellListRanger.SpellsByLevel.Add(ranger4th);
+            });
         }
     }
 }

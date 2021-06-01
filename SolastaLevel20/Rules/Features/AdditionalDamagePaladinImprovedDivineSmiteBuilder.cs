@@ -17,12 +17,14 @@ namespace SolastaLevel20.Rules.Features
             Definition.SetDamageAdvancement(RuleDefinitions.AdditionalDamageAdvancement.None);
             Definition.SetNotificationTag("ImprovedDivineSmite");
             Definition.SetTriggerCondition(RuleDefinitions.AdditionalDamageTriggerCondition.AlwaysActive);
+            Definition.DiceByRankTable.Clear();
+            Definition.FamiliesWithAdditionalDice.Clear();
         }
 
         private static FeatureDefinitionAdditionalDamage CreateAndAddToDB(string name, string guid)
             => new AdditionalDamagePaladinImprovedDivineSmiteBuilder(name, guid).AddToDB();
 
         public static FeatureDefinitionAdditionalDamage AdditionalDamagePaladinImprovedDivineSmite
-            => CreateAndAddToDB(AdditionalDamagePaladinImprovedDivineSmiteName, AdditionalDamagePaladinImprovedDivineSmiteGuid);
+            = CreateAndAddToDB(AdditionalDamagePaladinImprovedDivineSmiteName, AdditionalDamagePaladinImprovedDivineSmiteGuid);
     }
 }

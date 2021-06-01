@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using static SolastaModApi.DatabaseHelper.CharacterClassDefinitions;
 using static SolastaModApi.DatabaseHelper.FeatureDefinitionFeatureSets;
-using static SolastaModApi.DatabaseHelper.FeatureDefinitionAdditionalActions;
 
 namespace SolastaLevel20.Rules.Classes
 {

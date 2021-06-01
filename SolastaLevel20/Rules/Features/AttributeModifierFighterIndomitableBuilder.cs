@@ -22,10 +22,10 @@ namespace SolastaLevel20.Rules.Features
         private static FeatureDefinitionAttributeModifier CreateAndAddToDB(string name, string guid, int modifierValue)
             => new AttributeModifierFighterIndomitableBuilder(name, guid, modifierValue).AddToDB();
 
-        public static FeatureDefinitionAttributeModifier AttributeModifierFighterIndomitable2 => 
+        public static FeatureDefinitionAttributeModifier AttributeModifierFighterIndomitable2 = 
             CreateAndAddToDB(AttributeModifierFighterIndomitable2Name, AttributeModifierFighterIndomitable2Guid, 2);
 
-        public static FeatureDefinitionAttributeModifier AttributeModifierFighterIndomitable3 =>
+        public static FeatureDefinitionAttributeModifier AttributeModifierFighterIndomitable3 =
             CreateAndAddToDB(AttributeModifierFighterIndomitable3Name, AttributeModifierFighterIndomitable3Guid, 3);
     }
 }

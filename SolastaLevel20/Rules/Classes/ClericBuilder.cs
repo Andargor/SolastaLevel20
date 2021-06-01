@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using static SolastaLevel20.Rules.Features.PowerClericTurnUndeadBuilder;
 using static SolastaModApi.DatabaseHelper.CharacterClassDefinitions;
 using static SolastaModApi.DatabaseHelper.FeatureDefinitionFeatureSets;
 using static SolastaModApi.DatabaseHelper.FeatureDefinitionAttributeModifiers;
+using static SolastaLevel20.Rules.Features.PowerClericTurnUndeadBuilder;
 
 namespace SolastaLevel20.Rules.Classes
 {

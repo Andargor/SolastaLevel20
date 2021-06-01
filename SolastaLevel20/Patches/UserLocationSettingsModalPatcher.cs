@@ -22,6 +22,7 @@ namespace SolastaLevel20.Patches
         //        return false;
         //    }
         //}
+
         [HarmonyPatch(typeof(UserLocationSettingsModal), "OnMinLevelEndEdit")]
         public class UserLocationSettingsModal_OnMinLevelEndEdit_Patch
         {
@@ -52,6 +53,7 @@ namespace SolastaLevel20.Patches
         //        return false;
         //    }
         //}
+
         [HarmonyPatch(typeof(UserLocationSettingsModal), "OnMaxLevelEndEdit")]
         public class UserLocationSettingsModal_OnMaxLevelEndEdit_Patch
         {

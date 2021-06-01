@@ -45,6 +45,12 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Compile Remove="Rules\Spells\**" />
+	  <EmbeddedResource Remove="Rules\Spells\**" />
+	  <None Remove="Rules\Spells\**" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<Reference Include="SolastaModApi">
 			<HintPath>$([System.IO.Path]::Combine($(SolastaInstallDir), 'Mods\SolastaModApi\SolastaModApi.dll'))</HintPath>
 			<Private>false</Private>
@@ -412,9 +418,5 @@
 		<None Update="Translations-en.txt">
 		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Rules\Spells\" />
 	</ItemGroup>
 </Project>
