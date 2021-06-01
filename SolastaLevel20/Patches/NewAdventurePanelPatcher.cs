@@ -13,7 +13,7 @@ namespace SolastaLevel20.Patches
                 if (campaignDefinition != null)
                 {
                     campaignDefinition.SetMinLevel<CampaignDefinition>(1);
-                    campaignDefinition.SetMaxLevel<CampaignDefinition>(Main.MAX_LEVEL);
+                    campaignDefinition.SetMaxLevel<CampaignDefinition>(Main.MOD_MAX_LEVEL);
                 }
             }
         }
@@ -25,8 +25,8 @@ namespace SolastaLevel20.Patches
             {
                 if (userLocation != null)
                 {
-                    AccessTools.Field(userLocation.GetType(), "startLevelMin").SetValue(userLocation, 1);
-                    AccessTools.Field(userLocation.GetType(), "startLevelMax").SetValue(userLocation, Main.MAX_LEVEL);
+                    userLocation.StartLevelMin = 1;
+                    userLocation.StartLevelMax = Main.MOD_MAX_LEVEL;
                 }
             }
         }

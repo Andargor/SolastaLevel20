@@ -15,8 +15,8 @@ namespace SolastaLevel20.Patches
         //            result = 1;
         //        else if (result < 0)
         //            result = 1;
-        //        else if (result > Main.MAX_LEVEL)
-        //            result = Main.MAX_LEVEL;
+        //        else if (result > Main.MOD_MAX_LEVEL)
+        //            result = Main.MOD_MAX_LEVEL;
         //        ___minLevelInputField.text = result.ToString();
         //        ___minLevel = result;
         //        return false;
@@ -29,9 +29,9 @@ namespace SolastaLevel20.Patches
             static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
             {
                 var code = new List<CodeInstruction>(instructions);
-                var opcodes = code.FindAll(x => x.opcode.Name == "ldc.i4.s" && x.operand.ToString() == "10");
+                var opcodes = code.FindAll(x => x.opcode.Name == "ldc.i4.s" && (int) x.operand == Main.GAME_MAX_LEVEL);
                 foreach (var opcode in opcodes)
-                    opcode.operand = 20;
+                    opcode.operand = Main.MOD_MAX_LEVEL;
 
                 return code;
             }
@@ -46,8 +46,8 @@ namespace SolastaLevel20.Patches
         //            result = 1;
         //        else if (result < 0)
         //            result = 1;
-        //        else if (result > Main.MAX_LEVEL)
-        //            result = Main.MAX_LEVEL;
+        //        else if (result > Main.MOD_MAX_LEVEL)
+        //            result = Main.MOD_MAX_LEVEL;
         //        ___maxLevelInputField.text = result.ToString();
         //        ___maxLevel = result;
         //        return false;
@@ -60,9 +60,9 @@ namespace SolastaLevel20.Patches
             static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
             {
                 var code = new List<CodeInstruction>(instructions);
-                var opcodes = code.FindAll(x => x.opcode.Name == "ldc.i4.s" && x.operand.ToString() == "10");
+                var opcodes = code.FindAll(x => x.opcode.Name == "ldc.i4.s" && (int) x.operand == Main.GAME_MAX_LEVEL);
                 foreach (var opcode in opcodes)
-                    opcode.operand = 20;
+                    opcode.operand = Main.MOD_MAX_LEVEL;
 
                 return code;
             }

@@ -11,7 +11,8 @@ namespace SolastaLevel20
 {
     public class Main
     {
-        public const int MAX_LEVEL = 20;
+        public const int GAME_MAX_LEVEL = 10;
+        public const int MOD_MAX_LEVEL = 20;
 
         [Conditional("DEBUG")]
         internal static void Log(string msg) => Logger.Log(msg);
