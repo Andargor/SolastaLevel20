@@ -106,9 +106,10 @@ Attempt to bring all Solasta official heroes classes to level 20.
 ## Current Patches:
 
 	- Game Manager - Safe entry point to extend / patch the game databases
-	- Characters Panel - Patched hard-coded test for level 10 on LevelUp button
+	- Characters Panel - Patched to remove max level 10 constraint on level up button
 	- New Adventure Panel - Patched to remove constrainsts on min/max heroes levels when starting an adventure
-	- User Loccation Settings Modal - Patched to allow higher-level dungeons to be created
+	- Ruleset Character Hero - Patched to remove max level 10 constraint on CharacterLevel attribute
+	- User Location Settings Modal - Patched to allow higher-level dungeons to be created
 
 # How to Compile
 
