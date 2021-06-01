@@ -1,16 +1,45 @@
 ﻿using System.Collections.Generic;
 using static SolastaModApi.DatabaseHelper.CharacterClassDefinitions;
-using static SolastaModApi.DatabaseHelper.FeatureDefinitionFeatureSets;
 using static SolastaModApi.DatabaseHelper.FeatureDefinitionAttributeModifiers;
+using static SolastaModApi.DatabaseHelper.FeatureDefinitionCastSpells;
+using static SolastaModApi.DatabaseHelper.FeatureDefinitionFeatureSets;
+// using static SolastaModApi.DatabaseHelper.SpellDefinitions;
+using static SolastaModApi.DatabaseHelper.SpellListDefinitions;
+using static SolastaModApi.Extensions.SpellListDefinitionExtensions;
 using static SolastaLevel20.Rules.Features.PowerClericTurnUndeadBuilder;
 
 namespace SolastaLevel20.Rules.Classes
 {
     public static class ClericBuilder
     {
+        private static readonly List<List<int>> Slots = new List<List<int>>
+        {
+            new List<int> {2,0,0,0,0,0},
+            new List<int> {3,0,0,0,0,0},
+            new List<int> {4,2,0,0,0,0},
+            new List<int> {4,3,0,0,0,0},
+            new List<int> {4,3,2,0,0,0},
+            new List<int> {4,3,3,0,0,0},
+            new List<int> {4,3,3,1,0,0},
+            new List<int> {4,3,3,2,0,0},
+            new List<int> {4,3,3,3,1,0},
+            new List<int> {4,3,3,3,2,0},
+            new List<int> {4,3,3,3,2,1},
+            new List<int> {4,3,3,3,2,1},
+            new List<int> {4,3,3,3,2,1},
+            new List<int> {4,3,3,3,2,1},
+            new List<int> {4,3,3,3,2,1},
+            new List<int> {4,3,3,3,2,1},
+            new List<int> {4,3,3,3,2,1},
+            new List<int> {4,3,3,3,3,1},
+            new List<int> {4,3,3,3,3,2},
+            new List<int> {4,3,3,3,3,2},
+        };
+
         public static void Load()
         {
-            var features = new List<FeatureUnlockByLevel> {
+            // add missing progression
+            Cleric.FeatureUnlocks.AddRange(new List<FeatureUnlockByLevel> {
                 new FeatureUnlockByLevel(PowerClericTurnUndead11, 11),
                 new FeatureUnlockByLevel(FeatureSetAbilityScoreChoice, 12),
                 new FeatureUnlockByLevel(PowerClericTurnUndead14, 14),
@@ -20,9 +49,14 @@ namespace SolastaLevel20.Rules.Classes
                 // TODO 17: Divine Domain Feature
                 new FeatureUnlockByLevel(FeatureSetAbilityScoreChoice, 19)
                 // TODO 20: Divine Intervention Improvement
-            };
+            });
 
-            Cleric.FeatureUnlocks.AddRange(features);
+            // add missing spell slots
+            foreach (var slot in CastSpellCleric.SlotsPerLevels)
+            {
+                slot.Slots = Slots[slot.Level - 1];
+            }
+            SpellListCleric.SetMaxSpellLevel<SpellListDefinition>(Slots[0].Count);
         }
     }
 }
