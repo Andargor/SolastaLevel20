@@ -13,26 +13,26 @@ namespace SolastaLevel20.Rules.Classes
     {
         private static readonly List<List<int>> Slots = new List<List<int>>
         {
-            new List<int> {0,0,0,0},
-            new List<int> {2,2,0,0},
-            new List<int> {3,3,0,0},
-            new List<int> {3,3,0,0},
-            new List<int> {4,4,2,0},
-            new List<int> {4,4,2,0},
-            new List<int> {5,4,3,0},
-            new List<int> {5,4,3,0},
-            new List<int> {6,4,3,2},
-            new List<int> {6,4,3,2},
-            new List<int> {7,4,3,3},
-            new List<int> {7,4,3,3},
-            new List<int> {8,4,3,3},
-            new List<int> {8,4,3,3},
-            new List<int> {9,4,3,3},
-            new List<int> {9,4,3,3},
-            new List<int> {10,4,3,3},
-            new List<int> {10,4,3,3},
-            new List<int> {11,4,3,3},
-            new List<int> {11,4,3,3},
+            new List<int> {0,0,0,0,0},
+            new List<int> {2,0,0,0,0},
+            new List<int> {3,0,0,0,0},
+            new List<int> {3,0,0,0,0},
+            new List<int> {4,2,0,0,0},
+            new List<int> {4,2,0,0,0},
+            new List<int> {4,3,0,0,0},
+            new List<int> {4,3,0,0,0},
+            new List<int> {4,3,2,0,0},
+            new List<int> {4,3,2,0,0},
+            new List<int> {4,3,3,0,0},
+            new List<int> {4,3,3,0,0},
+            new List<int> {4,3,3,1,0},
+            new List<int> {4,3,3,1,0},
+            new List<int> {4,3,3,2,0},
+            new List<int> {4,3,3,2,0},
+            new List<int> {4,3,3,3,1},
+            new List<int> {4,3,3,3,1},
+            new List<int> {4,3,3,3,2},
+            new List<int> {4,3,3,3,2},
         };
         public static void Load()
         {
@@ -56,7 +56,7 @@ namespace SolastaLevel20.Rules.Classes
             }
             SpellListRanger.SetMaxSpellLevel<SpellListDefinition>(Slots[0].Count);
 
-            // add missing spells
+            // add Ranger 4th level spells
             SpellListRanger.SpellsByLevel.RemoveAll(x => x.Level == 4);
             SpellListRanger.SpellsByLevel.Add(new SpellListDefinition.SpellsByLevelDuplet
             {
