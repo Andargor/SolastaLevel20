@@ -24,7 +24,7 @@ namespace SolastaLevel20.Rules.Features
         private static FeatureDefinitionAdditionalDamage CreateAndAddToDB(string name, string guid)
             => new AdditionalDamagePaladinImprovedDivineSmiteBuilder(name, guid).AddToDB();
 
-        public static FeatureDefinitionAdditionalDamage AdditionalDamagePaladinImprovedDivineSmite
+        public static readonly FeatureDefinitionAdditionalDamage AdditionalDamagePaladinImprovedDivineSmite
             = CreateAndAddToDB(AdditionalDamagePaladinImprovedDivineSmiteName, AdditionalDamagePaladinImprovedDivineSmiteGuid);
     }
 }

@@ -21,7 +21,7 @@ namespace SolastaLevel20.Rules.Features
         private static FeatureDefinitionActionAffinity CreateAndAddToDB(string name, string guid)
             => new ActionAffinityRangerVanishActionBuilder(name, guid).AddToDB();
 
-        public static FeatureDefinitionActionAffinity ActionAffinityRangerVanishAction
+        public static readonly FeatureDefinitionActionAffinity ActionAffinityRangerVanishAction
             = CreateAndAddToDB(ActionAffinityRangerVanishActionName, ActionAffinityRangerVanishActionGuid);
     }
 }

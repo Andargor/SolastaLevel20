@@ -23,13 +23,13 @@ namespace SolastaLevel20.Rules.Features
         private static FeatureDefinitionPower CreateAndAddToDB(string name, string guid, int challengeRating)
             => new PowerClericTurnUndeadBuilder(name, guid, challengeRating).AddToDB();
 
-        public static FeatureDefinitionPower PowerClericTurnUndead11 =
+        public static readonly FeatureDefinitionPower PowerClericTurnUndead11 =
             CreateAndAddToDB(PowerClericTurnUndead11Name, PowerClericTurnUndead11Guid, 2);
 
-        public static FeatureDefinitionPower PowerClericTurnUndead14 =
+        public static readonly FeatureDefinitionPower PowerClericTurnUndead14 =
             CreateAndAddToDB(PowerClericTurnUndead14Name, PowerClericTurnUndead14Guid, 3);
 
-        public static FeatureDefinitionPower PowerClericTurnUndead17 =
+        public static readonly FeatureDefinitionPower PowerClericTurnUndead17 =
             CreateAndAddToDB(PowerClericTurnUndead17Name, PowerClericTurnUndead17Guid, 4);
     }
 }
