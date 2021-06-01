@@ -3,7 +3,7 @@
 Attempt to bring all Solasta official heroes classes to level 20.
 
 ## Classes:
-	- Cleric
+	- Cleric (caster level 6)
 		. 11: Turn Undead (CR 2)
 		. 12: Ability Score Increase or Feat Choice
 		. 14: Turn Undead (CR 3)
@@ -26,7 +26,7 @@ Attempt to bring all Solasta official heroes classes to level 20.
 		. 19: Ability Score Increase or Feat Choice
 		. 20: Extra Attack (3)
 
-	- Paladin
+	- Paladin (caster level 5)
 		. 11: Improved Divine Smite
 		. 12: Ability Score Increase or Feat Choice
 		. 14: Cleasing Touch [PLANNED]
@@ -36,7 +36,7 @@ Attempt to bring all Solasta official heroes classes to level 20.
 		. 19: Ability Score Increase or Feat Choice
 		. 20: Sacred Oath Feature [PLANNED]
 
-	- Ranger
+	- Ranger (caster level 5)
 		. 11: Ranger Archetype Feature [PLANNED]
 		. 12: Ability Score Increase or Feat Choice
 		. 14: Favored Enemy Choice (2), Vanish
@@ -59,7 +59,7 @@ Attempt to bring all Solasta official heroes classes to level 20.
 		. 19: Ability Score Increase or Feat Choice
 		. 20: Stroke of Luck [PLANNED]
 
-	- Wizard
+	- Wizard (caster level 6)
 		. 12: Ability Score Increase or Feat Choice
 		. 14: Overchannel [PLANNED]
 		. 16: Ability Score Increase or Feat Choice
@@ -68,8 +68,6 @@ Attempt to bring all Solasta official heroes classes to level 20.
 		. 20: Signature Spells [PLANNED]
 
 ## Spells:
-
-These spells were added at higher levels but still need to hack the Character Panel to offer them.
 
 	- Cleric:
 		. 06: Contagion
@@ -90,6 +88,15 @@ These spells were added at higher levels but still need to hack the Character Pa
 		. 04: Conjure Elemental
 		. 04: Freedom of Movement
 		. 04: Stoneskin
+
+	- Wizard:
+        . 06:CloudKill
+        . 06:Cone Of Cold
+        . 06:Conjure Elemental
+        . 06:Contagion
+        . 06:Dominate Person
+        . 06:Hold Monster
+        . 06:Mind Twist
 
 
 ## Features:
