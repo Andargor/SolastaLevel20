@@ -13,26 +13,26 @@ namespace SolastaLevel20.Rules.Classes
     {
         private static readonly List<List<int>> Slots = new List<List<int>>
         {
-            new List<int> {0,0,0,0},
-            new List<int> {2,0,0,0},
-            new List<int> {3,0,0,0},
-            new List<int> {3,0,0,0},
-            new List<int> {4,2,0,0},
-            new List<int> {4,2,0,0},
-            new List<int> {4,3,0,0},
-            new List<int> {4,3,0,0},
-            new List<int> {4,3,2,0},
-            new List<int> {4,3,2,0},
-            new List<int> {4,3,3,0},
-            new List<int> {4,3,3,0},
-            new List<int> {4,3,3,1},
-            new List<int> {4,3,3,1},
-            new List<int> {4,3,3,2},
-            new List<int> {4,3,3,2},
-            new List<int> {4,3,3,3},
-            new List<int> {4,3,3,3},
-            new List<int> {4,3,3,3},
-            new List<int> {4,3,3,3},
+            new List<int> {0,0,0,0,0},
+            new List<int> {2,0,0,0,0},
+            new List<int> {3,0,0,0,0},
+            new List<int> {3,0,0,0,0},
+            new List<int> {4,2,0,0,0},
+            new List<int> {4,2,0,0,0},
+            new List<int> {4,3,0,0,0},
+            new List<int> {4,3,0,0,0},
+            new List<int> {4,3,2,0,0},
+            new List<int> {4,3,2,0,0},
+            new List<int> {4,3,3,0,0},
+            new List<int> {4,3,3,0,0},
+            new List<int> {4,3,3,1,0},
+            new List<int> {4,3,3,1,0},
+            new List<int> {4,3,3,2,0},
+            new List<int> {4,3,3,2,0},
+            new List<int> {4,3,3,3,1},
+            new List<int> {4,3,3,3,1},
+            new List<int> {4,3,3,3,2},
+            new List<int> {4,3,3,3,2},
         };
 
         public static void Load()
@@ -56,7 +56,7 @@ namespace SolastaLevel20.Rules.Classes
             }
             SpellListPaladin.SetMaxSpellLevel<SpellListDefinition>(Slots[0].Count);
 
-            // add missing spells
+            // add missing 4th level spells
             SpellListPaladin.SpellsByLevel.RemoveAll(x => x.Level == 4);
             SpellListPaladin.SpellsByLevel.Add(new SpellListDefinition.SpellsByLevelDuplet
             {
@@ -65,6 +65,18 @@ namespace SolastaLevel20.Rules.Classes
                 {
                     Banishment,
                     DeathWard
+                }
+            });
+
+            // add missing 5th level spells
+            SpellListPaladin.SpellsByLevel.RemoveAll(x => x.Level == 5);
+            SpellListPaladin.SpellsByLevel.Add(new SpellListDefinition.SpellsByLevelDuplet
+            {
+                Level = 5,
+                Spells = new List<SpellDefinition>
+                {
+                    RaiseDead,
+                    DispelEvilAndGood
                 }
             });
         }
