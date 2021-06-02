@@ -21,7 +21,7 @@ namespace SolastaLevel20.Patches
             static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
             {
                 var code = new List<CodeInstruction>(instructions);
-                code.Find(x => x.opcode.Name == "ldc.i4.s" && (int) x.operand == Main.GAME_MAX_LEVEL).operand = Main.MOD_MAX_LEVEL;
+                code.Find(x => x.opcode.Name == "ldc.i4.s" && x.operand.ToString() == Main.GAME_MAX_LEVEL).operand = Main.MOD_MAX_LEVEL;
                 return code;
             }
         }
