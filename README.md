@@ -69,18 +69,10 @@ Attempt to bring all Solasta official heroes classes to level 20.
 
 ## Spells:
 
-	- Cleric:
-		. 06: Contagion
-		. 06: Dispel Evil and Good
-		. 06: Flame Strike
-		. 06: Greater Restoration
-		. 06: Insect Plague
-		. 06: Mass Cure Wounds
-		. 06: Raise Dead
-
 	- Paladin:
 		. 04: Banishement
 		. 04: Death Ward
+
 		. 05: Dispel Evil and Good
 		. 05: Raise Dead
 
@@ -88,16 +80,6 @@ Attempt to bring all Solasta official heroes classes to level 20.
 		. 04: Conjure Elemental
 		. 04: Freedom of Movement
 		. 04: Stoneskin
-
-	- Wizard:
-        . 06:CloudKill
-        . 06:Cone Of Cold
-        . 06:Conjure Elemental
-        . 06:Contagion
-        . 06:Dominate Person
-        . 06:Hold Monster
-        . 06:Mind Twist
-
 
 ## Features:
 
