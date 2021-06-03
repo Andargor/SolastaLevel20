@@ -13,26 +13,26 @@ namespace SolastaLevel20.Rules.Classes
     {
         private static readonly List<List<int>> Slots = new List<List<int>>
         {
-            new List<int> {2,0,0,0,0,0},
-            new List<int> {3,0,0,0,0,0},
-            new List<int> {4,2,0,0,0,0},
-            new List<int> {4,3,0,0,0,0},
-            new List<int> {4,3,2,0,0,0},
-            new List<int> {4,3,3,0,0,0},
-            new List<int> {4,3,3,1,0,0},
-            new List<int> {4,3,3,2,0,0},
-            new List<int> {4,3,3,3,1,0},
-            new List<int> {4,3,3,3,2,0},
-            new List<int> {4,3,3,3,2,1},
-            new List<int> {4,3,3,3,2,1},
-            new List<int> {4,3,3,3,2,1},
-            new List<int> {4,3,3,3,2,1},
-            new List<int> {4,3,3,3,2,1},
-            new List<int> {4,3,3,3,2,1},
-            new List<int> {4,3,3,3,2,1},
-            new List<int> {4,3,3,3,3,1},
-            new List<int> {4,3,3,3,3,2},
-            new List<int> {4,3,3,3,3,2},
+            new List<int> {2,0,0,0,0},
+            new List<int> {3,0,0,0,0},
+            new List<int> {4,2,0,0,0},
+            new List<int> {4,3,0,0,0},
+            new List<int> {4,3,2,0,0},
+            new List<int> {4,3,3,0,0},
+            new List<int> {4,3,3,1,0},
+            new List<int> {4,3,3,2,0},
+            new List<int> {4,3,3,3,1},
+            new List<int> {4,3,3,3,2},
+            new List<int> {4,3,3,3,2},
+            new List<int> {4,3,3,3,2},
+            new List<int> {4,3,3,3,2},
+            new List<int> {4,3,3,3,2},
+            new List<int> {4,3,3,3,2},
+            new List<int> {4,3,3,3,2},
+            new List<int> {4,3,3,3,2},
+            new List<int> {4,3,3,3,3},
+            new List<int> {4,3,3,3,3},
+            new List<int> {4,3,3,3,3},
         };
 
         public static void Load()
@@ -53,6 +53,8 @@ namespace SolastaLevel20.Rules.Classes
                 slot.Slots = Slots[slot.Level - 1];
             }
             SpellListWizard.SetMaxSpellLevel<SpellListDefinition>(Slots[0].Count);
+            SpellListWizardGreenmage.SetMaxSpellLevel<SpellListDefinition>(Slots[0].Count);
+            SpellListShockArcanist.SetMaxSpellLevel<SpellListDefinition>(Slots[0].Count);
         }
     }
 }
