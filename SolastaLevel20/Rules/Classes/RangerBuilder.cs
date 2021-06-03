@@ -34,6 +34,7 @@ namespace SolastaLevel20.Rules.Classes
             new List<int> {4,3,3,3},
             new List<int> {4,3,3,3},
         };
+
         public static void Load()
         {
             // add missing progression
