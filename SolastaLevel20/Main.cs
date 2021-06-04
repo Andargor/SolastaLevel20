@@ -43,6 +43,7 @@ namespace SolastaLevel20
                             var splitted = line.Split(new[] { '\t', ' ' }, 2);
                             var term = splitted[0];
                             var text = splitted[1];
+                            if (languageSourceData.ContainsTerm(term)) languageSourceData.RemoveTerm(term);
                             languageSourceData.AddTerm(term).Languages[languageIndex] = text;
                         }
                     }

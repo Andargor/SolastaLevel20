@@ -4,4 +4,6 @@ Feature/&RangerVanishActionDescription	Starting at 14th level, you can use the H
 Feature/&AttributeModifierFighterIndomitable2Title	Indomitable (2)
 Feature/&AttributeModifierFighterIndomitable3Title	Indomitable (3)
 Feature/&PaladinImprovedDivineSmiteTitle	Improved Divine Smite
-Feature/&PaladinImprovedDivineSmiteDescription	By 11th level, you are so suffused with righteous might that all your melee weapon strikes carry divine power with them. Whenever you hit a creature with a melee weapon, the creature takes an extra 1d8 radiant damage.
+Feature/&PaladinImprovedDivineSmiteDescription	By 11th level, you are so focused with righteous might that all your melee weapon strikes carry divine power with them. Whenever you hit a creature with a melee weapon, the creature takes an extra 1d8 radiant damage.
+MainMenu/&ExportPdfDescription	Level down the selected character
+MainMenu/&ExportPdfTitle	Level Down
