@@ -8,7 +8,7 @@ namespace SolastaLevel20.Rules.Classes
     {
         public static void Load()
         {
-            List<FeatureUnlockByLevel> features = new List<FeatureUnlockByLevel> {
+            Rogue.FeatureUnlocks.AddRange(new List<FeatureUnlockByLevel> {
                 new FeatureUnlockByLevel(FeatureSetAbilityScoreChoice, 10),
                 // TODO 11: Reliable Talent 
                 new FeatureUnlockByLevel(FeatureSetAbilityScoreChoice, 12),
@@ -20,9 +20,7 @@ namespace SolastaLevel20.Rules.Classes
                 // TODO 18: Elusive
                 new FeatureUnlockByLevel(FeatureSetAbilityScoreChoice, 19)
                 // TODO 20: Stroke of Luck
-            };
-
-            Rogue.FeatureUnlocks.AddRange(features);
+            });
         }
     }
 }
