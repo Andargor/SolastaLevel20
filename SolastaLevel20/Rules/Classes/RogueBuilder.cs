@@ -36,7 +36,7 @@ namespace SolastaLevel20.Rules.Classes
                 BuildDiceByRank(18, 9),
                 BuildDiceByRank(19, 10),
                 BuildDiceByRank(20, 10),
-            });;
+            }); ;
         }
         private static DiceByRank BuildDiceByRank(int rank, int dice)
         {
