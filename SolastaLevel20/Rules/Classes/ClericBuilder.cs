@@ -6,6 +6,7 @@ using static SolastaModApi.DatabaseHelper.FeatureDefinitionFeatureSets;
 // using static SolastaModApi.DatabaseHelper.SpellDefinitions;
 using static SolastaModApi.DatabaseHelper.SpellListDefinitions;
 using static SolastaModApi.Extensions.SpellListDefinitionExtensions;
+using static SolastaModApi.Extensions.FeatureDefinitionCastSpellExtensions;
 using static SolastaLevel20.Rules.Features.PowerClericTurnUndeadBuilder;
 
 namespace SolastaLevel20.Rules.Classes
@@ -56,6 +57,7 @@ namespace SolastaLevel20.Rules.Classes
             {
                 slot.Slots = Slots[slot.Level - 1];
             }
+            CastSpellCleric.SetSpellCastingLevel<FeatureDefinitionCastSpell>(Slots[0].Count);
             SpellListCleric.SetMaxSpellLevel<SpellListDefinition>(Slots[0].Count);
         }
     }
