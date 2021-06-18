@@ -1,6 +1,7 @@
 ﻿using SolastaModApi;
 using SolastaModApi.Infrastructure;
 using System.Collections.Generic;
+using System.Linq;
 using static SolastaModApi.DatabaseHelper.CharacterClassDefinitions;
 using static SolastaModApi.DatabaseHelper.FeatureDefinitionFeatureSets;
 
@@ -10,8 +11,13 @@ namespace SolastaLevel20.Rules.Classes
     {
         public static void Load()
         {
+            // Unofficial Fixes does this as well so we need to protect against each other
+            if (!Rogue.FeatureUnlocks.Where(fu => fu.Level == 10).Any(fu => fu.FeatureDefinition == FeatureSetAbilityScoreChoice))
+            {
+                Rogue.FeatureUnlocks.Add(new FeatureUnlockByLevel(FeatureSetAbilityScoreChoice, 10));
+            }
+
             Rogue.FeatureUnlocks.AddRange(new List<FeatureUnlockByLevel> {
-                new FeatureUnlockByLevel(FeatureSetAbilityScoreChoice, 10),
                 // TODO 11: Reliable Talent 
                 new FeatureUnlockByLevel(FeatureSetAbilityScoreChoice, 12),
                 // TODO 13: Roguish Archetype Feature
