@@ -5,6 +5,7 @@ using static SolastaModApi.DatabaseHelper.FeatureDefinitionFeatureSets;
 using static SolastaModApi.DatabaseHelper.SpellDefinitions;
 using static SolastaModApi.DatabaseHelper.SpellListDefinitions;
 using static SolastaModApi.Extensions.SpellListDefinitionExtensions;
+using static SolastaModApi.Extensions.FeatureDefinitionCastSpellExtensions;
 using static SolastaLevel20.Rules.Features.AdditionalDamagePaladinImprovedDivineSmiteBuilder;
 
 namespace SolastaLevel20.Rules.Classes
@@ -54,6 +55,7 @@ namespace SolastaLevel20.Rules.Classes
             {
                 slot.Slots = Slots[slot.Level - 1];
             }
+            CastSpellPaladin.SetSpellCastingLevel<FeatureDefinitionCastSpell>(Slots[0].Count);
             SpellListPaladin.SetMaxSpellLevel<SpellListDefinition>(Slots[0].Count);
 
             // add missing 4th level spells

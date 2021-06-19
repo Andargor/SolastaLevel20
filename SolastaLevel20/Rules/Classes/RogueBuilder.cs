@@ -1,6 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using SolastaModApi;
+using SolastaModApi.Infrastructure;
+using System.Collections.Generic;
+using System.Linq;
 using static SolastaModApi.DatabaseHelper.CharacterClassDefinitions;
 using static SolastaModApi.DatabaseHelper.FeatureDefinitionFeatureSets;
+using static SolastaModApi.DatabaseHelper.FeatureDefinitionSenses;
+using static SolastaLevel20.Rules.Features.ProficiencyRogueBlindSenseBuilder;
+using static SolastaLevel20.Rules.Features.ProficiencyRogueSlipperyMindBuilder;
 
 namespace SolastaLevel20.Rules.Classes
 {
@@ -8,21 +14,46 @@ namespace SolastaLevel20.Rules.Classes
     {
         public static void Load()
         {
-            List<FeatureUnlockByLevel> features = new List<FeatureUnlockByLevel> {
-                new FeatureUnlockByLevel(FeatureSetAbilityScoreChoice, 10),
+            // Unofficial Fixes does this as well so we need to protect against each other
+            if (!Rogue.FeatureUnlocks.Where(fu => fu.Level == 10).Any(fu => fu.FeatureDefinition == FeatureSetAbilityScoreChoice))
+            {
+                Rogue.FeatureUnlocks.Add(new FeatureUnlockByLevel(FeatureSetAbilityScoreChoice, 10));
+            }
+
+            Rogue.FeatureUnlocks.AddRange(new List<FeatureUnlockByLevel> {
                 // TODO 11: Reliable Talent 
                 new FeatureUnlockByLevel(FeatureSetAbilityScoreChoice, 12),
                 // TODO 13: Roguish Archetype Feature
-                // TODO 14: Blindsense
-                // TODO 15: Slippery Minds
+                new FeatureUnlockByLevel(ProficiencyRogueBlindSense, 14),
+                new FeatureUnlockByLevel(ProficiencyRogueSlipperyMind, 15),
                 new FeatureUnlockByLevel(FeatureSetAbilityScoreChoice, 16),
                 // TODO 17: Roguish Archetype Feature
                 // TODO 18: Elusive
                 new FeatureUnlockByLevel(FeatureSetAbilityScoreChoice, 19)
                 // TODO 20: Stroke of Luck
-            };
-
-            Rogue.FeatureUnlocks.AddRange(features);
+            });
+            // In case TA adds levels 11-20 later on, clear them out. If that happens we can delete this section.
+            DatabaseHelper.FeatureDefinitionAdditionalDamages.AdditionalDamageRogueSneakAttack.DiceByRankTable.RemoveAll(x => x.Rank > 10);
+            DatabaseHelper.FeatureDefinitionAdditionalDamages.AdditionalDamageRogueSneakAttack.DiceByRankTable.AddRange(new List<DiceByRank>() {
+                BuildDiceByRank(11, 6),
+                BuildDiceByRank(12, 6),
+                BuildDiceByRank(13, 7),
+                BuildDiceByRank(14, 7),
+                BuildDiceByRank(15, 8),
+                BuildDiceByRank(16, 8),
+                BuildDiceByRank(17, 9),
+                BuildDiceByRank(18, 9),
+                BuildDiceByRank(19, 10),
+                BuildDiceByRank(20, 10),
+            }); ;
         }
+        private static DiceByRank BuildDiceByRank(int rank, int dice)
+        {
+            DiceByRank diceByRank = new DiceByRank();
+            diceByRank.SetField("rank", rank);
+            diceByRank.SetField("diceNumber", dice);
+            return diceByRank;
+        }
+
     }
 }

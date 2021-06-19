@@ -1,4 +1,4 @@
-﻿using TMPro;
+﻿using System;
 using System.Collections.Generic;
 using HarmonyLib;
 
@@ -12,7 +12,7 @@ namespace SolastaLevel20.Patches
             static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
             {
                 var code = new List<CodeInstruction>(instructions);
-                var opcodes = code.FindAll(x => x.opcode.Name == "ldc.i4.s" && x.operand.ToString() == Main.GAME_MAX_LEVEL);
+                var opcodes = code.FindAll(x => x.opcode.Name == "ldc.i4.s" && Convert.ToInt32(x.operand) == Main.GAME_MAX_LEVEL);
                 foreach (var opcode in opcodes)
                     opcode.operand = Main.MOD_MAX_LEVEL;
 
@@ -26,7 +26,7 @@ namespace SolastaLevel20.Patches
             static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
             {
                 var code = new List<CodeInstruction>(instructions);
-                var opcodes = code.FindAll(x => x.opcode.Name == "ldc.i4.s" && x.operand.ToString() == Main.GAME_MAX_LEVEL);
+                var opcodes = code.FindAll(x => x.opcode.Name == "ldc.i4.s" && Convert.ToInt32(x.operand) == Main.GAME_MAX_LEVEL);
                 foreach (var opcode in opcodes)
                     opcode.operand = Main.MOD_MAX_LEVEL;
 

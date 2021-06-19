@@ -6,6 +6,7 @@ using static SolastaModApi.DatabaseHelper.FeatureDefinitionFeatureSets;
 // using static SolastaModApi.DatabaseHelper.SpellDefinitions;
 using static SolastaModApi.DatabaseHelper.SpellListDefinitions;
 using static SolastaModApi.Extensions.SpellListDefinitionExtensions;
+using static SolastaModApi.Extensions.FeatureDefinitionCastSpellExtensions;
 using static SolastaLevel20.Rules.Features.PowerClericTurnUndeadBuilder;
 
 namespace SolastaLevel20.Rules.Classes
@@ -14,26 +15,26 @@ namespace SolastaLevel20.Rules.Classes
     {
         private static readonly List<List<int>> Slots = new List<List<int>>
         {
-            new List<int> {2,0,0,0,0,0},
-            new List<int> {3,0,0,0,0,0},
-            new List<int> {4,2,0,0,0,0},
-            new List<int> {4,3,0,0,0,0},
-            new List<int> {4,3,2,0,0,0},
-            new List<int> {4,3,3,0,0,0},
-            new List<int> {4,3,3,1,0,0},
-            new List<int> {4,3,3,2,0,0},
-            new List<int> {4,3,3,3,1,0},
-            new List<int> {4,3,3,3,2,0},
-            new List<int> {4,3,3,3,2,1},
-            new List<int> {4,3,3,3,2,1},
-            new List<int> {4,3,3,3,2,1},
-            new List<int> {4,3,3,3,2,1},
-            new List<int> {4,3,3,3,2,1},
-            new List<int> {4,3,3,3,2,1},
-            new List<int> {4,3,3,3,2,1},
-            new List<int> {4,3,3,3,3,1},
-            new List<int> {4,3,3,3,3,2},
-            new List<int> {4,3,3,3,3,2},
+            new List<int> {2,0,0,0,0},
+            new List<int> {3,0,0,0,0},
+            new List<int> {4,2,0,0,0},
+            new List<int> {4,3,0,0,0},
+            new List<int> {4,3,2,0,0},
+            new List<int> {4,3,3,0,0},
+            new List<int> {4,3,3,1,0},
+            new List<int> {4,3,3,2,0},
+            new List<int> {4,3,3,3,1},
+            new List<int> {4,3,3,3,2},
+            new List<int> {4,3,3,3,2},
+            new List<int> {4,3,3,3,2},
+            new List<int> {4,3,3,3,2},
+            new List<int> {4,3,3,3,2},
+            new List<int> {4,3,3,3,2},
+            new List<int> {4,3,3,3,2},
+            new List<int> {4,3,3,3,2},
+            new List<int> {4,3,3,3,3},
+            new List<int> {4,3,3,3,3},
+            new List<int> {4,3,3,3,3},
         };
 
         public static void Load()
@@ -56,6 +57,7 @@ namespace SolastaLevel20.Rules.Classes
             {
                 slot.Slots = Slots[slot.Level - 1];
             }
+            CastSpellCleric.SetSpellCastingLevel<FeatureDefinitionCastSpell>(Slots[0].Count);
             SpellListCleric.SetMaxSpellLevel<SpellListDefinition>(Slots[0].Count);
         }
     }
