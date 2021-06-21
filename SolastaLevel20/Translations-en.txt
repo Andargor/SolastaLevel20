@@ -7,3 +7,7 @@ Feature/&PaladinImprovedDivineSmiteTitle	Improved Divine Smite
 Feature/&PaladinImprovedDivineSmiteDescription	By 11th level, you are so focused with righteous might that all your melee weapon strikes carry divine power with them. Whenever you hit a creature with a melee weapon, the creature takes an extra 1d8 radiant damage.
 MainMenu/&ExportPdfDescription	Level down the selected character
 MainMenu/&ExportPdfTitle	Level Down
+Feature/&ProficiencyRogueSlipperyMindTitle	Slippery Mind
+Feature/&ProficiencyRogueSlipperyMindDescription	By 15th level, you have acquired greater mental strength. You gain proficiency in Wisdom saving throws.
+Feature/&ProficiencyRogueBlindSenseTitle	Blindsense
+Feature/&ProficiencyRogueBlindSenseDescription	Starting at 14th level, if you are able to hear, you are aware of the location of any hidden or invisible creature within 10 feet of you.

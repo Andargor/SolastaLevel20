@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using static SolastaModApi.DatabaseHelper.CharacterClassDefinitions;
 using static SolastaModApi.DatabaseHelper.FeatureDefinitionFeatureSets;
+using static SolastaModApi.DatabaseHelper.FeatureDefinitionSenses;
+using static SolastaLevel20.Rules.Features.ProficiencyRogueBlindSenseBuilder;
+using static SolastaLevel20.Rules.Features.ProficiencyRogueSlipperyMindBuilder;
 
 namespace SolastaLevel20.Rules.Classes
 {
@@ -21,8 +24,8 @@ namespace SolastaLevel20.Rules.Classes
                 // TODO 11: Reliable Talent 
                 new FeatureUnlockByLevel(FeatureSetAbilityScoreChoice, 12),
                 // TODO 13: Roguish Archetype Feature
-                // TODO 14: Blindsense
-                // TODO 15: Slippery Minds
+                new FeatureUnlockByLevel(ProficiencyRogueBlindSense, 14),
+                new FeatureUnlockByLevel(ProficiencyRogueSlipperyMind, 15),
                 new FeatureUnlockByLevel(FeatureSetAbilityScoreChoice, 16),
                 // TODO 17: Roguish Archetype Feature
                 // TODO 18: Elusive
