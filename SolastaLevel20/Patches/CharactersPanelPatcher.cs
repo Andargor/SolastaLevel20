@@ -33,28 +33,32 @@ namespace SolastaLevel20.Patches
         {
             static void Postfix(CharactersPanel __instance, List<CharacterPlateToggle> ___characterPlates, int ___selectedPlate)
             {
-                ICharacterPoolService service = ServiceRepository.GetService<ICharacterPoolService>();
+                var characterPoolService = ServiceRepository.GetService<ICharacterPoolService>();
+                var characterBuildingService = ServiceRepository.GetService<ICharacterBuildingService>();
+
                 RulesetCharacterHero hero = (RulesetCharacterHero)null;
                 RulesetCharacterHero.Snapshot snapshot = (RulesetCharacterHero.Snapshot)null;
                 string filename = ___characterPlates[___selectedPlate].Filename;
+                characterPoolService.LoadCharacter(filename, out hero, out snapshot);
+                var experienceGained = hero.ExperienceGained;
 
-                service.LoadCharacter(filename, out hero, out snapshot);
-                var exp = hero.ExperienceGained;
+                characterBuildingService.CreateNewCharacter();
+                AccessTools.Field(characterBuildingService.GetType(), "heroCharacter").SetValue(characterBuildingService, hero);
+                characterBuildingService.UnassignLastClassLevel(true);
+                hero.RefreshAll();
+                hero.AutoPrepareSpells(true);
+                hero.ExperienceGained = experienceGained;
                 var characterLevel = hero.GetAttribute("CharacterLevel").CurrentValue.ToString();
-                //if (characterLevel == "1")
-                //    __instance.OnNewCharacterCb();
-                //else
-                //{
-                hero.RemoveClassLevel();
-                hero.ExperienceGained = exp;
                 var featuresToRemove = hero.ActiveFeatures.Where(x => x.Key.EndsWith(characterLevel)).Select(x => x.Key);
                 foreach (var key in featuresToRemove)
+                {
                     hero.ActiveFeatures.Remove(key);
+                }
                 hero.RefreshAll();
                 hero.FillSnapshot(snapshot, true);
-                service.Pool.Remove(filename);
-                service.SaveCharacter(hero, true);
-                //}
+
+                characterPoolService.Pool.Remove(filename);
+                characterPoolService.SaveCharacter(hero, true);
             }
         }        
     }
