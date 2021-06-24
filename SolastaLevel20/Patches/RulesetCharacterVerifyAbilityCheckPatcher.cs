@@ -26,7 +26,9 @@ namespace SolastaLevel20.Patches
 
             bool IsProficient()
             {
-                return hero.ToolTypeProficiencies.Contains(proficiencyName) || hero.SkillProficiencies.Contains(proficiencyName) || hero.ExpertiseProficiencies.Contains(proficiencyName);
+                return hero.ToolTypeProficiencies.Contains(proficiencyName) 
+                    || hero.SkillProficiencies.Contains(proficiencyName) 
+                    || hero.ExpertiseProficiencies.Contains(proficiencyName);
             }
         }
     }
