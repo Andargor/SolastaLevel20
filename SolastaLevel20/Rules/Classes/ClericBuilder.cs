@@ -57,8 +57,8 @@ namespace SolastaLevel20.Rules.Classes
             {
                 slot.Slots = Slots[slot.Level - 1];
             }
-            CastSpellCleric.SetSpellCastingLevel<FeatureDefinitionCastSpell>(Slots[0].Count);
-            SpellListCleric.SetMaxSpellLevel<SpellListDefinition>(Slots[0].Count);
+            CastSpellCleric.SetSpellCastingLevel(Slots[0].Count);
+            SpellListCleric.SetMaxSpellLevel(Slots[0].Count);
         }
     }
 }

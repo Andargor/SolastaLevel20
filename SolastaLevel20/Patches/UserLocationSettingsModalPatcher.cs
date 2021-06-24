@@ -9,7 +9,7 @@ namespace SolastaLevel20.Patches
         [HarmonyPatch(typeof(UserLocationSettingsModal), "OnMinLevelEndEdit")]
         public class UserLocationSettingsModal_OnMinLevelEndEdit_Patch
         {
-            static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+            internal static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
             {
                 var code = new List<CodeInstruction>(instructions);
                 var opcodes = code.FindAll(x => x.opcode.Name == "ldc.i4.s" && Convert.ToInt32(x.operand) == Main.GAME_MAX_LEVEL);
@@ -23,7 +23,7 @@ namespace SolastaLevel20.Patches
         [HarmonyPatch(typeof(UserLocationSettingsModal), "OnMaxLevelEndEdit")]
         public class UserLocationSettingsModal_OnMaxLevelEndEdit_Patch
         {
-            static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+            internal static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
             {
                 var code = new List<CodeInstruction>(instructions);
                 var opcodes = code.FindAll(x => x.opcode.Name == "ldc.i4.s" && Convert.ToInt32(x.operand) == Main.GAME_MAX_LEVEL);

@@ -4,7 +4,6 @@ using System.Linq;
 using UnityEngine.UI;
 using HarmonyLib;
 
-
 namespace SolastaLevel20.Patches
 {
     class CharactersPanelPatcher
@@ -12,14 +11,14 @@ namespace SolastaLevel20.Patches
         [HarmonyPatch(typeof(CharactersPanel), "Refresh")]
         internal static class CharactersPanel_Refresh_Patch
         {
-            static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+            internal static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
             {
                 var code = new List<CodeInstruction>(instructions);
                 code.Find(x => x.opcode.Name == "ldc.i4.s" && Convert.ToInt32(x.operand) == Main.GAME_MAX_LEVEL).operand = Main.MOD_MAX_LEVEL;
                 return code;
             }
 
-            static void Postfix(CharactersPanel __instance, Button ___characterCheckerButton, Button ___exportPdfButton, List<CharacterPlateToggle> ___characterPlates, int ___selectedPlate)
+            internal static void Postfix(CharactersPanel __instance, Button ___characterCheckerButton, Button ___exportPdfButton, List<CharacterPlateToggle> ___characterPlates, int ___selectedPlate)
             {
 
                 var characterLevel = (___selectedPlate >= 0) ? ___characterPlates[___selectedPlate].GuiCharacter.CharacterLevel : Main.MOD_MIN_LEVEL;
@@ -31,7 +30,7 @@ namespace SolastaLevel20.Patches
         [HarmonyPatch(typeof(CharactersPanel), "OnExportPdfCb")]
         internal static class CharactersPanel_OnExportPdfCb_Patch
         {
-            static void Postfix(CharactersPanel __instance, List<CharacterPlateToggle> ___characterPlates, int ___selectedPlate)
+            internal static void Postfix(CharactersPanel __instance, List<CharacterPlateToggle> ___characterPlates, int ___selectedPlate)
             {
                 var characterPoolService = ServiceRepository.GetService<ICharacterPoolService>();
                 var characterBuildingService = ServiceRepository.GetService<ICharacterBuildingService>();

@@ -41,12 +41,12 @@ namespace SolastaLevel20
                 else
                     using (var sr = new StreamReader(filename))
                     {
-                        String line, term, text;
+                        string line, term, text;
                         while ((line = sr.ReadLine()) != null)
                         {
                             try
                             {
-                                var splitted = line.Split(new[] { '\t', ' ' }, 2);
+                                var splitted = line.Split(new[] { '\t', ' ' }, 2, StringSplitOptions.RemoveEmptyEntries);
                                 term = splitted[0];
                                 text = splitted[1];
                             }
