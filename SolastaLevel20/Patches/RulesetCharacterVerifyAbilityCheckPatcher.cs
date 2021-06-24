@@ -12,7 +12,7 @@ namespace SolastaLevel20.Patches
             var hero = __instance as RulesetCharacterHero;
            
             if (hero == null) { return; }
-            if (!hero.ClassesAndLevels.Keys.Any(k => k.Name == "Rogue")) { return; }
+            if (!hero.ClassesAndLevels.Keys.Any(k => k.Name == RuleDefinitions.RogueClass)) { return; }
             if (!hero.FeaturesToBrowse.OfType<IDieRollModificationProvider>().Any(f => (BaseDefinition)f == FeatureRogueReliableTalent)) { return; }
 
             if (diceRoll < 10 && IsProficient())
