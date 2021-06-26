@@ -9,7 +9,7 @@ namespace SolastaLevel20.Patches
         {
             internal static bool Prefix(ref int __result)
             {
-                __result = RuleDefinitions.ExperienceThresholds[Main.MOD_MAX_LEVEL - 1] - 1;
+                __result = 1000000;
                 return false;
             }
         }

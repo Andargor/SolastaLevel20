@@ -5,7 +5,6 @@ using System.Reflection;
 using UnityModManagerNet;
 using HarmonyLib;
 using I2.Loc;
-using SolastaLevel20.Rules.Classes;
 
 namespace SolastaLevel20
 {
@@ -14,6 +13,7 @@ namespace SolastaLevel20
         public const int MOD_MIN_LEVEL = 1;
         public const int MOD_MAX_LEVEL = 20;
         public const int GAME_MAX_LEVEL = 10;
+        public const int MAX_CHARACTER_EXPERIENCE = 1000000;
 
         public static readonly string MOD_FOLDER = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
 
@@ -84,16 +84,6 @@ namespace SolastaLevel20
             }
 
             return true;
-        }
-
-        internal static void ModEntryPoint()
-        {
-            ClericBuilder.Load();
-            FighterBuilder.Load();
-            PaladinBuilder.Load();
-            RangerBuilder.Load();
-            RogueBuilder.Load();
-            WizardBuilder.Load();
         }
     }
 }

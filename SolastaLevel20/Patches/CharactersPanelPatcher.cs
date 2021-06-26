@@ -20,10 +20,8 @@ namespace SolastaLevel20.Patches
 
             internal static void Postfix(CharactersPanel __instance, Button ___characterCheckerButton, Button ___exportPdfButton, List<CharacterPlateToggle> ___characterPlates, int ___selectedPlate)
             {
-
                 var characterLevel = (___selectedPlate >= 0) ? ___characterPlates[___selectedPlate].GuiCharacter.CharacterLevel : Main.MOD_MIN_LEVEL;
                 ___exportPdfButton.gameObject.SetActive(characterLevel > Main.MOD_MIN_LEVEL);
-                ___characterCheckerButton.gameObject.SetActive(true);
             }
         }
 
@@ -48,7 +46,7 @@ namespace SolastaLevel20.Patches
                 hero.AutoPrepareSpells(true);
                 hero.ExperienceGained = experienceGained;
                 var characterLevel = hero.GetAttribute("CharacterLevel").CurrentValue.ToString();
-                var featuresToRemove = hero.ActiveFeatures.Where(x => x.Key.EndsWith(characterLevel)).Select(x => x.Key);
+                var featuresToRemove = hero.ActiveFeatures.Where(x => x.Key.EndsWith(characterLevel)).Select(x => x.Key).ToList();
                 foreach (var key in featuresToRemove)
                 {
                     hero.ActiveFeatures.Remove(key);
