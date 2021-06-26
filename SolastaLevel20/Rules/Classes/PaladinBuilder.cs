@@ -55,8 +55,8 @@ namespace SolastaLevel20.Rules.Classes
             {
                 slot.Slots = Slots[slot.Level - 1];
             }
-            CastSpellPaladin.SetSpellCastingLevel(Slots[0].Count);
-            SpellListPaladin.SetMaxSpellLevel(Slots[0].Count);
+            CastSpellPaladin.SetSpellCastingLevel(Slots.Count);
+            SpellListPaladin.SetMaxSpellLevel(SpellListPaladin.SpellsByLevel.Count);
 
             // add missing 4th level spells
             SpellListPaladin.SpellsByLevel.RemoveAll(x => x.Level == 4);

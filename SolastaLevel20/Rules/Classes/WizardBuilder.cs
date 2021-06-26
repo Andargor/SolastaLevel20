@@ -54,10 +54,10 @@ namespace SolastaLevel20.Rules.Classes
                 slot.Slots = Slots[slot.Level - 1];
             }
 
-            CastSpellWizard.SetSpellCastingLevel(Slots[0].Count);
-            SpellListWizard.SetMaxSpellLevel(Slots[0].Count);
-            SpellListWizardGreenmage.SetMaxSpellLevel(Slots[0].Count);
-            SpellListShockArcanist.SetMaxSpellLevel(Slots[0].Count);
+            CastSpellWizard.SetSpellCastingLevel(Slots.Count);
+            SpellListWizard.SetMaxSpellLevel(SpellListWizard.SpellsByLevel.Count);
+            SpellListWizardGreenmage.SetMaxSpellLevel(SpellListWizardGreenmage.SpellsByLevel.Count);
+            SpellListShockArcanist.SetMaxSpellLevel(SpellListShockArcanist.SpellsByLevel.Count);
         }
     }
 }
