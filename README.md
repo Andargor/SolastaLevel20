@@ -48,11 +48,11 @@ Attempt to bring all Solasta official heroes classes to level 20.
 
 	- Rogue
 		. 10: Ability Score Increase or Feat Choice
-		. 11: Reliable Talent [PLANNED]
+		. 11: Reliable Talent
 		. 12: Ability Score Increase or Feat Choice
 		. 13: Roguish Archetype Feature [PLANNED]
-		. 14: Blindsense [PLANNED]
-		. 15: Slippery Minds [PLANNED]
+		. 14: Blindsense
+		. 15: Slippery Minds
 		. 16: Ability Score Increase or Feat Choice
 		. 17: Roguish Archetype Feature [PLANNED]
 		. 18: Elusive [PLANNED]
