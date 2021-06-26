@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using static SolastaModApi.DatabaseHelper.CharacterClassDefinitions;
 using static SolastaModApi.DatabaseHelper.FeatureDefinitionFeatureSets;
-using static SolastaModApi.DatabaseHelper.FeatureDefinitionSenses;
 using static SolastaLevel20.Rules.Features.ProficiencyRogueBlindSenseBuilder;
 using static SolastaLevel20.Rules.Features.ProficiencyRogueSlipperyMindBuilder;
+using static SolastaLevel20.Rules.Features.FeatureRogueReliableTalentBuilder;
 
 namespace SolastaLevel20.Rules.Classes
 {
@@ -21,7 +21,7 @@ namespace SolastaLevel20.Rules.Classes
             }
 
             Rogue.FeatureUnlocks.AddRange(new List<FeatureUnlockByLevel> {
-                // TODO 11: Reliable Talent 
+                new FeatureUnlockByLevel(FeatureRogueReliableTalent, 11),
                 new FeatureUnlockByLevel(FeatureSetAbilityScoreChoice, 12),
                 // TODO 13: Roguish Archetype Feature
                 new FeatureUnlockByLevel(ProficiencyRogueBlindSense, 14),

@@ -11,3 +11,5 @@ Feature/&ProficiencyRogueSlipperyMindTitle	Slippery Mind
 Feature/&ProficiencyRogueSlipperyMindDescription	By 15th level, you have acquired greater mental strength. You gain proficiency in Wisdom saving throws.
 Feature/&ProficiencyRogueBlindSenseTitle	Blindsense
 Feature/&ProficiencyRogueBlindSenseDescription	Starting at 14th level, if you are able to hear, you are aware of the location of any hidden or invisible creature within 10 feet of you.
+Feature/&FeatureRogueReliableTalentTitle   Reliable talent
+Feature/&FeatureRogueReliableTalentDescription   You treat a roll of less than 10 as 10 for any ability at which you are proficient.

@@ -56,8 +56,8 @@ namespace SolastaLevel20.Rules.Classes
             {
                 slot.Slots = Slots[slot.Level - 1];
             }
-            CastSpellRanger.SetSpellCastingLevel<FeatureDefinitionCastSpell>(Slots[0].Count);
-            SpellListRanger.SetMaxSpellLevel<SpellListDefinition>(Slots[0].Count);
+            CastSpellRanger.SetSpellCastingLevel(Slots[0].Count);
+            SpellListRanger.SetMaxSpellLevel(Slots[0].Count);
 
             // add Ranger 4th level spells
             SpellListRanger.SpellsByLevel.RemoveAll(x => x.Level == 4);

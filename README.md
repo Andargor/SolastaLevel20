@@ -122,10 +122,10 @@ NOTE Unity Mod Manager and this mod template make use of [Harmony](https://go.mi
 4. Open Downloads folder
 	* Right-click UnitySetup64-2019.4.1f1.exe, 7Zip -> Extract Here
 	* Navigate to Editor\Data\PlaybackEngines\windowsstandalonesupport\Variations\win64_development_mono
-		* Copy *UnityPlayer.dll* and *WinPixEventRuntime.dll* to clipboard
+		* Copy *WindowsPlayer.exe*, *UnityPlayer.dll* and *WinPixEventRuntime.dll* to clipboard
 	* Navigate to the Solasta game folder
-		* Rename *UnityPlayer.dll* to *UnityPlayer.dll.original*
-		* Paste *UnityPlayer.dll* and *WinPixEventRuntime.dll* from clipboard
+		* Paste *WindowsPlayer.exe*, *UnityPlayer.dll* and *WinPixEventRuntime.dll* from clipboard
+		* Rename *WindowsPlayer.exe* to *Solasta.exe*
 5. You can now attach the Unity Debugger from Visual Studio 2019, Debug -> Attach Unity Debug
 
 # How to publish (first time)

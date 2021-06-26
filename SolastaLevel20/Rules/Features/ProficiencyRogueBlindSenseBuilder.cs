@@ -13,7 +13,7 @@ namespace SolastaLevel20.Rules.Features
         {
             Definition.GuiPresentation.Title = "Feature/&ProficiencyRogueBlindSenseTitle";
             Definition.GuiPresentation.Description = "Feature/&ProficiencyRogueBlindSenseDescription";
-            Definition.GuiPresentation.SetHidden<GuiPresentation>(false);
+            Definition.GuiPresentation.SetHidden(false);
         }
 
         private static FeatureDefinitionSense CreateAndAddToDB(string name, string guid)
