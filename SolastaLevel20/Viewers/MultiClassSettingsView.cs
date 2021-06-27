@@ -1,0 +1,124 @@
+﻿using System.Collections.Generic;
+using UnityModManagerNet;
+using ModKit;
+using static SolastaLevel20.Models.MultiClass;
+
+namespace SolastaLevel20.Viewers
+{
+    public class MultiClassSettingsView : IMenuSelectablePage
+    {
+        public string Name => "Multi Class Settings";
+
+        public int Priority => 0;
+
+        private static bool showStats = false;
+        private static bool showAttributes = false;
+        private static readonly Dictionary<RulesetCharacterHero, bool> showHeroClasses = new Dictionary<RulesetCharacterHero, bool> { };
+
+        private static void DisplayClassSelector(RulesetCharacterHero hero)
+        {
+            var classes = GetClassDefinitions();
+            var classNames = ClassNames.ToArray();
+
+            if (!NextHeroClass.ContainsKey(hero))
+            {
+                NextHeroClass.Add(hero, hero.ClassesHistory[hero.ClassesHistory.Count - 1]);
+            }
+            
+            var selected = classes.IndexOf(NextHeroClass[hero]);
+
+            if (UI.SelectionGrid(ref selected, classNames, classNames.Length, UI.Width(400)))
+            {
+                NextHeroClass[hero] = classes[selected];
+            }
+        }
+
+        private static void DisplayHeroStats(RulesetCharacterHero hero)
+        {
+            var flip = false;
+
+            UI.Div();
+            using (UI.HorizontalScope())
+            {
+                DisplayClassSelector(hero);
+
+                UI.Label($"{hero.Name} {hero.SurName}".orange().bold(), UI.Width(240));
+
+                UI.Label($"{hero.RaceDefinition.FormatTitle()}".white(), UI.Width(96));
+
+                var attributesLabel = showAttributes ? "" : "Atributes";
+                UI.DisclosureToggle(attributesLabel, ref showAttributes, attributesLabel.Length * 12);
+
+                if (showAttributes)
+                {
+                    UI.Label($"Str: {hero.GetAttribute("Strength").CurrentValue:0#}".white(), UI.Width(48));
+                    UI.Label($"Con: {hero.GetAttribute("Constitution").CurrentValue:0#}".yellow(), UI.Width(48));
+                    UI.Label($"Dex: {hero.GetAttribute("Dexterity").CurrentValue:0#}".white(), UI.Width(48));
+                    UI.Label($"Int: {hero.GetAttribute("Intelligence").CurrentValue:0#}".yellow(), UI.Width(48));
+                    UI.Label($"Wis: {hero.GetAttribute("Wisdom").CurrentValue:0#}".white(), UI.Width(48));
+                    UI.Label($"Cha: {hero.GetAttribute("Charisma").CurrentValue:0#}".yellow(), UI.Width(48));
+                };
+
+                var statsLabel = showStats ? "" : "Stats";
+                UI.DisclosureToggle(statsLabel, ref showStats, statsLabel.Length * 12);
+
+                if (showStats)
+                {
+                    UI.Label($"AC: {hero.GetAttribute("ArmorClass").CurrentValue:0#}".white(), UI.Width(48));
+                    UI.Label($"HD: {hero.MaxHitDiceCount():0#}{hero.MainHitDie}".yellow(), UI.Width(72));
+                    UI.Label($"XP: {hero.GetAttribute("Experience").CurrentValue}".white(), UI.Width(72));
+                    UI.Label($"LV: {hero.GetAttribute("CharacterLevel").CurrentValue:0#}".white(), UI.Width(48));
+                }
+
+                showHeroClasses.TryGetValue(hero, out flip);
+                if (UI.DisclosureToggle($"Classes", ref flip, 132))
+                {
+                    showHeroClasses.AddOrReplace<RulesetCharacterHero, bool>(hero, flip);
+                }
+            }
+
+            showHeroClasses.TryGetValue(hero, out flip);
+            if (flip)
+                using (UI.VerticalScope())
+                {
+                    using (UI.HorizontalScope())
+                    {
+                        UI.Space(30);
+                        UI.Label("Classes".bold().cyan());
+                    }
+                    for (var ix = 0; ix < hero.ClassesHistory.Count; ix++)
+                        using (UI.HorizontalScope())
+                        {
+                            var classHistory = hero.ClassesHistory[ix];
+
+                            UI.Space(60);
+                            UI.Label($"{ix+1:0#}: {classHistory.FormatTitle()}", UI.Width(192));
+                        }
+                }
+        }
+
+        private static void DisplayHeroes()
+        {
+            using (UI.VerticalScope(UI.AutoWidth(), UI.AutoHeight()))
+            {
+                if (InGame())
+                    foreach (var hero in GetGameHeroes())
+                    {
+                        DisplayHeroStats(hero);
+                    }
+                else
+                    foreach (var hero in GetPoolHeroes())
+                    {
+                        DisplayHeroStats(hero);
+                    }
+            }
+        }
+
+        public void OnGUI(UnityModManager.ModEntry modEntry)
+        {
+            if (Main.Mod == null) return;
+
+            DisplayHeroes();
+        }
+    }
+}

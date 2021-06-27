@@ -2,7 +2,7 @@
 using SolastaModApi.Extensions;
 using static SolastaModApi.DatabaseHelper.FeatureDefinitionAdditionalDamages;
 
-namespace SolastaLevel20.Rules.Features
+namespace SolastaLevel20.Models.Features
 {
     internal class AdditionalDamagePaladinImprovedDivineSmiteBuilder : BaseDefinitionBuilder<FeatureDefinitionAdditionalDamage>
     {

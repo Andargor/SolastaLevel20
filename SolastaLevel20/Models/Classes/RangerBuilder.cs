@@ -6,9 +6,9 @@ using static SolastaModApi.DatabaseHelper.SpellDefinitions;
 using static SolastaModApi.DatabaseHelper.SpellListDefinitions;
 using static SolastaModApi.Extensions.SpellListDefinitionExtensions;
 using static SolastaModApi.Extensions.FeatureDefinitionCastSpellExtensions;
-using static SolastaLevel20.Rules.Features.ActionAffinityRangerVanishActionBuilder;
+using static SolastaLevel20.Models.Features.ActionAffinityRangerVanishActionBuilder;
 
-namespace SolastaLevel20.Rules.Classes
+namespace SolastaLevel20.Models.Classes
 {
     public static class RangerBuilder
     {

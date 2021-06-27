@@ -2,7 +2,7 @@
 using static SolastaModApi.DatabaseHelper.FeatureDefinitionActionAffinitys;
 using static SolastaModApi.DatabaseHelper.ActionDefinitions;
 
-namespace SolastaLevel20.Rules.Features
+namespace SolastaLevel20.Models.Features
 {
     internal class ActionAffinityRangerVanishActionBuilder : BaseDefinitionBuilder<FeatureDefinitionActionAffinity>
     {

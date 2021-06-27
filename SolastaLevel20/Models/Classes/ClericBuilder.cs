@@ -5,12 +5,13 @@ using static SolastaModApi.DatabaseHelper.FeatureDefinitionCastSpells;
 using static SolastaModApi.DatabaseHelper.FeatureDefinitionFeatureSets;
 // using static SolastaModApi.DatabaseHelper.SpellDefinitions;
 using static SolastaModApi.DatabaseHelper.SpellListDefinitions;
-using static SolastaModApi.Extensions.FeatureDefinitionCastSpellExtensions;
 using static SolastaModApi.Extensions.SpellListDefinitionExtensions;
+using static SolastaModApi.Extensions.FeatureDefinitionCastSpellExtensions;
+using static SolastaLevel20.Models.Features.PowerClericTurnUndeadBuilder;
 
-namespace SolastaLevel20.Rules.Classes
+namespace SolastaLevel20.Models.Classes
 {
-    public static class WizardBuilder
+    public static class ClericBuilder
     {
         private static readonly List<List<int>> Slots = new List<List<int>>
         {
@@ -39,25 +40,25 @@ namespace SolastaLevel20.Rules.Classes
         public static void Load()
         {
             // add missing progression
-            Wizard.FeatureUnlocks.AddRange(new List<FeatureUnlockByLevel> {
+            Cleric.FeatureUnlocks.AddRange(new List<FeatureUnlockByLevel> {
+                new FeatureUnlockByLevel(PowerClericTurnUndead11, 11),
                 new FeatureUnlockByLevel(FeatureSetAbilityScoreChoice, 12),
-                // TODO 14: Overchannel
+                new FeatureUnlockByLevel(PowerClericTurnUndead14, 14),
                 new FeatureUnlockByLevel(FeatureSetAbilityScoreChoice, 16),
-                // TODO 18: Spell Mastery
+                new FeatureUnlockByLevel(PowerClericTurnUndead17, 17),
+                new FeatureUnlockByLevel(AttributeModifierClericChannelDivinityAdd, 18),
+                // TODO 17: Divine Domain Feature
                 new FeatureUnlockByLevel(FeatureSetAbilityScoreChoice, 19)
-                // TODO 20: Signature Spells
+                // TODO 20: Divine Intervention Improvement
             });
 
             // add missing spell slots
-            foreach (var slot in CastSpellWizard.SlotsPerLevels)
+            foreach (var slot in CastSpellCleric.SlotsPerLevels)
             {
                 slot.Slots = Slots[slot.Level - 1];
             }
-
-            CastSpellWizard.SetSpellCastingLevel(Slots.Count);
-            SpellListWizard.SetMaxSpellLevel(SpellListWizard.SpellsByLevel.Count);
-            SpellListWizardGreenmage.SetMaxSpellLevel(SpellListWizardGreenmage.SpellsByLevel.Count);
-            SpellListShockArcanist.SetMaxSpellLevel(SpellListShockArcanist.SpellsByLevel.Count);
+            CastSpellCleric.SetSpellCastingLevel(Slots.Count);
+            SpellListCleric.SetMaxSpellLevel(SpellListCleric.SpellsByLevel.Count);
         }
     }
 }

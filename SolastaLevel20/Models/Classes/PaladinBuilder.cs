@@ -6,9 +6,9 @@ using static SolastaModApi.DatabaseHelper.SpellDefinitions;
 using static SolastaModApi.DatabaseHelper.SpellListDefinitions;
 using static SolastaModApi.Extensions.SpellListDefinitionExtensions;
 using static SolastaModApi.Extensions.FeatureDefinitionCastSpellExtensions;
-using static SolastaLevel20.Rules.Features.AdditionalDamagePaladinImprovedDivineSmiteBuilder;
+using static SolastaLevel20.Models.Features.AdditionalDamagePaladinImprovedDivineSmiteBuilder;
 
-namespace SolastaLevel20.Rules.Classes
+namespace SolastaLevel20.Models.Classes
 {
     public static class PaladinBuilder
     {

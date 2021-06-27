@@ -2,7 +2,7 @@
 using SolastaModApi.Extensions;
 using static SolastaModApi.DatabaseHelper.FeatureDefinitionDieRollModifiers;
 
-namespace SolastaLevel20.Rules.Features
+namespace SolastaLevel20.Models.Features
 {
     /// <summary>
     /// This class does nothing.  Used for UI and for detection by RulesetCharacterVerifyAbilityCheckPatcher

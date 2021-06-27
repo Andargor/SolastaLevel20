@@ -3,9 +3,9 @@ using static SolastaModApi.DatabaseHelper.CharacterClassDefinitions;
 using static SolastaModApi.DatabaseHelper.FeatureDefinitionAttributeModifiers;
 using static SolastaModApi.DatabaseHelper.FeatureDefinitionFeatureSets;
 using static SolastaModApi.DatabaseHelper.FeatureDefinitionPowers;
-using static SolastaLevel20.Rules.Features.AttributeModifierFighterIndomitableBuilder;
+using static SolastaLevel20.Models.Features.AttributeModifierFighterIndomitableBuilder;
 
-namespace SolastaLevel20.Rules.Classes
+namespace SolastaLevel20.Models.Classes
 {
     public static class FighterBuilder
     {

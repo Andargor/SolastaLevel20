@@ -1,6 +1,6 @@
 ﻿using HarmonyLib;
 using System.Linq;
-using static SolastaLevel20.Rules.Features.FeatureRogueReliableTalentBuilder;
+using static SolastaLevel20.Models.Features.FeatureRogueReliableTalentBuilder;
 
 namespace SolastaLevel20.Patches
 {

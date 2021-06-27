@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using static SolastaModApi.DatabaseHelper.CharacterClassDefinitions;
 using static SolastaModApi.DatabaseHelper.FeatureDefinitionFeatureSets;
-using static SolastaLevel20.Rules.Features.ProficiencyRogueBlindSenseBuilder;
-using static SolastaLevel20.Rules.Features.ProficiencyRogueSlipperyMindBuilder;
-using static SolastaLevel20.Rules.Features.FeatureRogueReliableTalentBuilder;
+using static SolastaLevel20.Models.Features.ProficiencyRogueBlindSenseBuilder;
+using static SolastaLevel20.Models.Features.ProficiencyRogueSlipperyMindBuilder;
+using static SolastaLevel20.Models.Features.FeatureRogueReliableTalentBuilder;
 
-namespace SolastaLevel20.Rules.Classes
+namespace SolastaLevel20.Models.Classes
 {
     class RogueBuilder
     {
@@ -54,6 +54,5 @@ namespace SolastaLevel20.Rules.Classes
             diceByRank.SetField("diceNumber", dice);
             return diceByRank;
         }
-
     }
 }

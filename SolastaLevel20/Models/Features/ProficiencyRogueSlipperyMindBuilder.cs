@@ -1,8 +1,7 @@
 ﻿using SolastaModApi;
-using SolastaModApi.Extensions;
 using static SolastaModApi.DatabaseHelper.FeatureDefinitionProficiencys;
 
-namespace SolastaLevel20.Rules.Features
+namespace SolastaLevel20.Models.Features
 {
     internal class ProficiencyRogueSlipperyMindBuilder : BaseDefinitionBuilder<FeatureDefinitionProficiency>
     {

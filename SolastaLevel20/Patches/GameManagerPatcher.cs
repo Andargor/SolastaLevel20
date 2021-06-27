@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
-using SolastaLevel20.Rules.Classes;
+using SolastaLevel20.Models.Classes;
+using static SolastaLevel20.Settings;
 
 namespace SolastaLevel20.Patches
 {
@@ -8,8 +9,8 @@ namespace SolastaLevel20.Patches
         internal static void FixExperienceTable()
         {
             int[] experienceThresholds = new int[21];
-            experienceThresholds[Main.MOD_MAX_LEVEL] = Main.MAX_CHARACTER_EXPERIENCE;
-            for (var ix = 0; ix < Main.MOD_MAX_LEVEL; ix++)
+            experienceThresholds[MOD_MAX_LEVEL] = MAX_CHARACTER_EXPERIENCE;
+            for (var ix = 0; ix < MOD_MAX_LEVEL; ix++)
                 experienceThresholds[ix] = RuleDefinitions.ExperienceThresholds[ix];
         }
 

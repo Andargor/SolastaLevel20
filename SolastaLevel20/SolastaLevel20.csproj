@@ -45,9 +45,9 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Compile Remove="Rules\Spells\**" />
-	  <EmbeddedResource Remove="Rules\Spells\**" />
-	  <None Remove="Rules\Spells\**" />
+	  <Compile Remove="Models\Spells\**" />
+	  <EmbeddedResource Remove="Models\Spells\**" />
+	  <None Remove="Models\Spells\**" />
 	</ItemGroup>
 
 	<ItemGroup>

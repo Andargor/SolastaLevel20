@@ -2,7 +2,7 @@
 using SolastaModApi.Extensions;
 using static SolastaModApi.DatabaseHelper.FeatureDefinitionAttributeModifiers;
 
-namespace SolastaLevel20.Rules.Features
+namespace SolastaLevel20.Models.Features
 {
     internal class AttributeModifierFighterIndomitableBuilder : BaseDefinitionBuilder<FeatureDefinitionAttributeModifier>
     {
