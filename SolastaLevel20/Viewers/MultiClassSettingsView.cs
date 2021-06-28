@@ -20,16 +20,18 @@ namespace SolastaLevel20.Viewers
             var classes = GetClassDefinitions();
             var classNames = ClassNames.ToArray();
 
-            if (!NextHeroClass.ContainsKey(hero))
+            var heroName = hero.Name + hero.SurName;
+
+            if (!NextHeroClass.ContainsKey(heroName))
             {
-                NextHeroClass.Add(hero, hero.ClassesHistory[hero.ClassesHistory.Count - 1]);
+                NextHeroClass.Add(heroName, hero.ClassesHistory[hero.ClassesHistory.Count - 1]);
             }
             
-            var selected = classes.IndexOf(NextHeroClass[hero]);
+            var selected = classes.IndexOf(NextHeroClass[heroName]);
 
             if (UI.SelectionGrid(ref selected, classNames, classNames.Length, UI.Width(400)))
             {
-                NextHeroClass[hero] = classes[selected];
+                NextHeroClass[heroName] = classes[selected];
             }
         }
 

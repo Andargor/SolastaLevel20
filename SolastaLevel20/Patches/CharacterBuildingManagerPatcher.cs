@@ -23,7 +23,8 @@ namespace SolastaLevel20.Patches
                     level = __instance.HeroCharacter.ClassesAndLevels[lastClassDefinition];
                     if (flip)
                     {
-                        lastClassDefinition = NextHeroClass[__instance.HeroCharacter];
+                        var heroName = __instance.HeroCharacter.Name + __instance.HeroCharacter.SurName;
+                        lastClassDefinition = NextHeroClass[heroName];
                     }
                 }
                 return false;

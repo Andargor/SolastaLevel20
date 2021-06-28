@@ -1,6 +1,7 @@
 ﻿using HarmonyLib;
 using SolastaLevel20.Models.Classes;
 using static SolastaLevel20.Settings;
+using static SolastaLevel20.Models.MultiClass;
 
 namespace SolastaLevel20.Patches
 {
@@ -19,6 +20,7 @@ namespace SolastaLevel20.Patches
         {
             internal static void Postfix()
             {
+                ForceDeityOnAllClasses();
                 FixExperienceTable();
                 ClericBuilder.Load();
                 FighterBuilder.Load();

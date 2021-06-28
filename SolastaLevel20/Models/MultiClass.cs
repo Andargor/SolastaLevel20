@@ -10,18 +10,30 @@ namespace SolastaLevel20.Models
 
         public static readonly List<string> ClassNames = new List<string>();
 
-        public static readonly Dictionary<RulesetCharacterHero, CharacterClassDefinition> NextHeroClass = new Dictionary<RulesetCharacterHero, CharacterClassDefinition> { };
+        public static readonly Dictionary<string, CharacterClassDefinition> NextHeroClass = new Dictionary<string, CharacterClassDefinition> { };
+
+        public static void ForceDeityOnAllClasses()
+        {
+            var characterClassDefinitionDatabase = DatabaseRepository.GetDatabase<CharacterClassDefinition>();
+            if (characterClassDefinitionDatabase != null)
+            {
+                foreach (var characterClassDefinition in characterClassDefinitionDatabase.GetAllElements())
+                {
+                    characterClassDefinition.SetRequiresDeity(true);
+                }
+            }
+        }
 
         public static List<CharacterClassDefinition> GetClassDefinitions()
         {
             if (solastaClassDefinitions.Count == 0)
             {
                 var characterClassDefinitionDatabase = DatabaseRepository.GetDatabase<CharacterClassDefinition>();
+
                 if (characterClassDefinitionDatabase != null)
                 {
                     foreach (var characterClassDefinition in characterClassDefinitionDatabase.GetAllElements())
                     {
-                        characterClassDefinition.SetRequiresDeity(true);
                         solastaClassDefinitions.Add(characterClassDefinition);
                         ClassNames.Add(characterClassDefinition.FormatTitle());
                     }
@@ -37,6 +49,7 @@ namespace SolastaLevel20.Models
             if (poolHeroes.Count == 0)
             {
                 var characterPoolService = ServiceRepository.GetService<ICharacterPoolService>();
+
                 if (characterPoolService != null)
                 {
                     foreach (var name in characterPoolService.Pool.Keys)

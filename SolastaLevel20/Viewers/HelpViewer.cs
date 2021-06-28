@@ -18,7 +18,11 @@ namespace SolastaLevel20.Viewers
             {
                 using (UI.VerticalScope())
                 {
-                    UI.Label("TBD...".bold());
+                    UI.Label("Multi Class (ALPHA VERSION):".bold());
+                    UI.Label(". deity selection is forced on new characters to avoid issues with clerics or paladins");
+                    UI.Label(". character inspection UI needs a lot of tweaks [planned]");
+                    UI.Label(". need to rework the spell system for multi-class");
+                    UI.Label(". need to test channel divinity, unarmored defense and other multi-class rules");
                 }
             }
         }
