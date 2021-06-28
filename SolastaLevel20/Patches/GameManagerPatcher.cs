@@ -22,12 +22,16 @@ namespace SolastaLevel20.Patches
             {
                 ForceDeityOnAllClasses();
                 FixExperienceTable();
+
                 ClericBuilder.Load();
                 FighterBuilder.Load();
                 PaladinBuilder.Load();
                 RangerBuilder.Load();
                 RogueBuilder.Load();
                 WizardBuilder.Load();
+
+                ServiceRepository.GetService<IInputService>().RegisterCommand(CTRL_SHIFT_RIGHT, 275, 304, 306, -1, -1, -1);
+                ServiceRepository.GetService<IInputService>().RegisterCommand(CTRL_SHIFT_LEFT, 276, 304, 306, -1, -1, -1);
             }
         }
     }
