@@ -15,7 +15,7 @@ namespace SolastaLevel20
 
     public class Settings : UnityModManager.ModSettings
     {
-        public int version = 1;
+        public int maxAllowedClasses = 2;
 
         public const int MOD_MIN_LEVEL = 1;
         public const int MOD_MAX_LEVEL = 20;
@@ -35,6 +35,7 @@ namespace SolastaLevel20
         internal static UnityModManager.ModEntry.ModLogger Logger { get; private set; }
         internal static ModManager<Core, Settings> Mod;
         internal static MenuManager Menu;
+        internal static Settings Settings { get { return Mod.Settings; } }
 
         internal static void LoadTranslations()
         {

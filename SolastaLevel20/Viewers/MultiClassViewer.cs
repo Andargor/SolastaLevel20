@@ -5,11 +5,11 @@ using static SolastaLevel20.Models.MultiClass;
 
 namespace SolastaLevel20.Viewers
 {
-    public class MultiClassSettingsView : IMenuSelectablePage
+    public class MultiClassViewer : IMenuSelectablePage
     {
         public string Name => "Multi Class Settings";
 
-        public int Priority => 0;
+        public int Priority => 1;
 
         private static bool showStats = false;
         private static bool showAttributes = false;
@@ -38,7 +38,6 @@ namespace SolastaLevel20.Viewers
         {
             var flip = false;
 
-            UI.Div();
             using (UI.HorizontalScope())
             {
                 DisplayClassSelector(hero);
@@ -96,6 +95,8 @@ namespace SolastaLevel20.Viewers
                             UI.Label($"{ix+1:0#}: {classHistory.FormatTitle()}", UI.Width(192));
                         }
                 }
+
+            UI.Div();
         }
 
         private static void DisplayHeroes()
@@ -118,6 +119,9 @@ namespace SolastaLevel20.Viewers
         public void OnGUI(UnityModManager.ModEntry modEntry)
         {
             if (Main.Mod == null) return;
+
+            UI.Label("Welcome to Level 20 with Multi Class".yellow().bold());
+            UI.Div();
 
             DisplayHeroes();
         }

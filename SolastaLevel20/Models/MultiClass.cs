@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using SolastaModApi.Extensions;
 
 namespace SolastaLevel20.Models
@@ -76,12 +77,20 @@ namespace SolastaLevel20.Models
         public static List<string> GetFilteredClasses(RulesetCharacterHero hero)
         {
             var _classes = new List<string>() { };
+            var characterClassDefinitions = hero.ClassesHistory.Distinct();
             var currentClass = hero.ClassesHistory[hero.ClassesHistory.Count - 1].FormatTitle();
 
             if (!ApproveMultiClassInOut(hero, currentClass))
             {
                 _classes.Add(currentClass);
             }
+            else if (characterClassDefinitions.Count() >= Main.Settings.maxAllowedClasses)
+            {
+                foreach (var characterClassDefinition in characterClassDefinitions)
+                {
+                    _classes.Add(characterClassDefinition.FormatTitle());
+                }
+            } 
             else
             {
                 foreach (var name in GetClasses())
