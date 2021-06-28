@@ -19,6 +19,15 @@ namespace SolastaLevel20.Patches
             }
         }
 
+        [HarmonyPatch(typeof(CharactersPanel), "OnNewCharacterCb")]
+        internal static class CharactersPanel_OnNewCharacterCb_Patch
+        {
+            internal static void Postfix()
+            {
+                IsHeroesPoolDirty = true;
+            }
+        }
+
         [HarmonyPatch(typeof(CharactersPanel), "OnLevelUpCb")]
         internal static class CharactersPanel_OnLevelUpCb_Patch
         {
