@@ -17,19 +17,18 @@ namespace SolastaLevel20.Viewers
 
         private static void DisplayClassSelector(RulesetCharacterHero hero)
         {
-            var classes = GetClassDefinitions();
-            var classNames = ClassNames.ToArray();
+            var classes = GetFilteredClasses(hero).ToArray();
 
             var heroName = hero.Name + hero.SurName;
 
             if (!NextHeroClass.ContainsKey(heroName))
             {
-                NextHeroClass.Add(heroName, hero.ClassesHistory[hero.ClassesHistory.Count - 1]);
+                NextHeroClass.Add(heroName, hero.ClassesHistory[hero.ClassesHistory.Count - 1].FormatTitle());
             }
             
-            var selected = classes.IndexOf(NextHeroClass[heroName]);
+            var selected = System.Array.IndexOf(classes, NextHeroClass[heroName]);
 
-            if (UI.SelectionGrid(ref selected, classNames, classNames.Length, UI.Width(400)))
+            if (UI.SelectionGrid(ref selected, classes, classes.Length, UI.Width(400)))
             {
                 NextHeroClass[heroName] = classes[selected];
             }
@@ -104,12 +103,12 @@ namespace SolastaLevel20.Viewers
             using (UI.VerticalScope(UI.AutoWidth(), UI.AutoHeight()))
             {
                 if (InGame())
-                    foreach (var hero in GetGameHeroes())
+                    foreach (var hero in GetHeroesInGame())
                     {
                         DisplayHeroStats(hero);
                     }
                 else
-                    foreach (var hero in GetPoolHeroes())
+                    foreach (var hero in GetHeroesPool())
                     {
                         DisplayHeroStats(hero);
                     }

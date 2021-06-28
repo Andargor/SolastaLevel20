@@ -24,7 +24,7 @@ namespace SolastaLevel20.Patches
                     if (flip)
                     {
                         var heroName = __instance.HeroCharacter.Name + __instance.HeroCharacter.SurName;
-                        lastClassDefinition = NextHeroClass[heroName];
+                        lastClassDefinition = GetClassDefinition(NextHeroClass[heroName]);
                     }
                 }
                 return false;
