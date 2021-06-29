@@ -1,8 +1,8 @@
 ﻿using HarmonyLib;
 using System.Collections.Generic;
+using System.Linq;
 using SolastaModApi;
 using static SolastaLevel20.Models.MultiClass;
-using System.Linq;
 
 namespace SolastaLevel20.Patches
 {
@@ -13,8 +13,8 @@ namespace SolastaLevel20.Patches
         [HarmonyPatch(typeof(CharacterBuildingManager), "GetLastAssignedClassAndLevel")]
         internal static class CharacterBuildingManager_GetLastAssignedClassAndLevel_Patch
         {
-            internal static bool Prefix(CharacterBuildingManager __instance, out CharacterClassDefinition lastClassDefinition, out int level)
-            {
+            internal static bool Prefix(CharacterBuildingManager __instance, out CharacterClassDefinition lastClassDefinition, out int level, bool ___levelingUp)
+            {   
                 if (__instance.HeroCharacter.ClassesHistory.Count <= 0)
                 {
                     lastClassDefinition = null;
@@ -26,8 +26,7 @@ namespace SolastaLevel20.Patches
                     level = __instance.HeroCharacter.ClassesAndLevels[lastClassDefinition];
                     if (flip)
                     {
-                        var heroName = __instance.HeroCharacter.Name + __instance.HeroCharacter.SurName;
-                        lastClassDefinition = GetClassDefinition(NextHeroClass[heroName]);
+                        lastClassDefinition = GetHeroSelectedClass(__instance.HeroCharacter);
                     }
                 }
                 return false;
@@ -39,8 +38,9 @@ namespace SolastaLevel20.Patches
         {
             internal static void Prefix()
             {
-                flip = true;
+                flip = Main.Settings.maxAllowedClasses > 1;
             }
+
             internal static void Postfix()
             {
                 flip = false;

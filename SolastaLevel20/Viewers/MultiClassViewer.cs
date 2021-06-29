@@ -17,13 +17,12 @@ namespace SolastaLevel20.Viewers
 
         private static void DisplayClassSelector(RulesetCharacterHero hero)
         {
-            var classes = GetFilteredClasses(hero).ToArray();
-            var heroName = hero.Name + hero.SurName;            
-            var selected = System.Array.IndexOf(classes, NextHeroClass[heroName]);
+            var classes = GetHeroAllowedClassNames(hero).ToArray();          
+            var selected = System.Array.IndexOf(classes, GetHeroSelectedClassName(hero));
 
             if (UI.SelectionGrid(ref selected, classes, classes.Length, UI.Width(400)))
             {
-                NextHeroClass[heroName] = classes[selected];
+                SetHeroSelectedClassName(hero, classes[selected]);
             }
         }
 

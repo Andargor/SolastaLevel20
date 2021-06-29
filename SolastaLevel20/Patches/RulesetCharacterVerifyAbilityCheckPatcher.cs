@@ -9,9 +9,7 @@ namespace SolastaLevel20.Patches
     {
         public static void Prefix(RulesetCharacter __instance, ref int diceRoll, string proficiencyName)
         {
-            var hero = __instance as RulesetCharacterHero;
-           
-            if (hero == null) { return; }
+            if (!(__instance is RulesetCharacterHero hero)) { return; }
             if (!hero.ClassesAndLevels.Keys.Any(k => k.Name == RuleDefinitions.RogueClass)) { return; }
             if (!hero.FeaturesToBrowse.OfType<IDieRollModificationProvider>().Any(f => (BaseDefinition)f == FeatureRogueReliableTalent)) { return; }
 
