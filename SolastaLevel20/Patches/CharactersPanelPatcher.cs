@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using HarmonyLib;
 using static SolastaLevel20.Settings;
-using static SolastaLevel20.Models.MultiClass;
 
 namespace SolastaLevel20.Patches
 {
@@ -16,15 +15,6 @@ namespace SolastaLevel20.Patches
                 var code = new List<CodeInstruction>(instructions);
                 code.Find(x => x.opcode.Name == "ldc.i4.s" && Convert.ToInt32(x.operand) == GAME_MAX_LEVEL).operand = MOD_MAX_LEVEL;
                 return code;
-            }
-        }
-
-        [HarmonyPatch(typeof(CharactersPanel), "EnumeratePlates")]
-        internal static class CharactersPanel_OnNewCharacterCb_Patch
-        {
-            internal static void Postfix()
-            {
-                GetHeroesPool(true);
             }
         }
     }

@@ -1,7 +1,6 @@
 ﻿using HarmonyLib;
 using SolastaLevel20.Models.Classes;
 using static SolastaLevel20.Settings;
-using static SolastaLevel20.Models.MultiClass;
 
 namespace SolastaLevel20.Patches
 {
@@ -20,7 +19,6 @@ namespace SolastaLevel20.Patches
         {
             internal static void Postfix()
             {
-                ForceDeityOnAllClasses();
                 FixExperienceTable();
 
                 ClericBuilder.Load();
@@ -29,9 +27,6 @@ namespace SolastaLevel20.Patches
                 RangerBuilder.Load();
                 RogueBuilder.Load();
                 WizardBuilder.Load();
-
-                ServiceRepository.GetService<IInputService>().RegisterCommand(CTRL_SHIFT_RIGHT, 275, 304, 306, -1, -1, -1);
-                ServiceRepository.GetService<IInputService>().RegisterCommand(CTRL_SHIFT_LEFT, 276, 304, 306, -1, -1, -1);
             }
         }
     }

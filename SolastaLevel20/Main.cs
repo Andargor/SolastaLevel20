@@ -15,15 +15,10 @@ namespace SolastaLevel20
 
     public class Settings : UnityModManager.ModSettings
     {
-        public int maxAllowedClasses = 2;
-
         public const int MOD_MIN_LEVEL = 1;
         public const int MOD_MAX_LEVEL = 20;
         public const int GAME_MAX_LEVEL = 10;
         public const int MAX_CHARACTER_EXPERIENCE = 1000000;
-
-        public const InputCommands.Id CTRL_SHIFT_LEFT = (InputCommands.Id)22220001;
-        public const InputCommands.Id CTRL_SHIFT_RIGHT = (InputCommands.Id)22220002;
     }
 
     public class Main
