@@ -18,14 +18,7 @@ namespace SolastaLevel20.Viewers
         private static void DisplayClassSelector(RulesetCharacterHero hero)
         {
             var classes = GetFilteredClasses(hero).ToArray();
-
-            var heroName = hero.Name + hero.SurName;
-
-            if (!NextHeroClass.ContainsKey(heroName))
-            {
-                NextHeroClass.Add(heroName, hero.ClassesHistory[hero.ClassesHistory.Count - 1].FormatTitle());
-            }
-            
+            var heroName = hero.Name + hero.SurName;            
             var selected = System.Array.IndexOf(classes, NextHeroClass[heroName]);
 
             if (UI.SelectionGrid(ref selected, classes, classes.Length, UI.Width(400)))

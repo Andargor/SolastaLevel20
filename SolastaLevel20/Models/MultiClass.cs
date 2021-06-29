@@ -11,8 +11,6 @@ namespace SolastaLevel20.Models
 
         public static readonly Dictionary<string, string> NextHeroClass = new Dictionary<string, string> { };
 
-        public static bool IsHeroesPoolDirty = true;
-
         private static List<string> GetClasses()
         {
             if (classes.Count == 0)
@@ -132,12 +130,11 @@ namespace SolastaLevel20.Models
             }
         }
 
-        public static List<RulesetCharacterHero> GetHeroesPool()
+        public static List<RulesetCharacterHero> GetHeroesPool(bool isDirty = false)
         {
-            if (IsHeroesPoolDirty)
+            if (isDirty)
             {
                 heroesPool.Clear();
-                IsHeroesPoolDirty = false;
             }
             if (heroesPool.Count == 0)    
             {
@@ -153,6 +150,12 @@ namespace SolastaLevel20.Models
                             out RulesetCharacterHero hero,
                             out RulesetCharacterHero.Snapshot snapshot);
                         heroesPool.Add(hero);
+
+                        var heroName = hero.Name + hero.SurName;
+                        if (!NextHeroClass.ContainsKey(heroName))
+                        {
+                            NextHeroClass.Add(heroName, hero.ClassesHistory[hero.ClassesHistory.Count - 1].FormatTitle());
+                        }
                     }
                     heroesPool.Sort((a, b) =>
                     {
@@ -175,7 +178,14 @@ namespace SolastaLevel20.Models
             {
                 foreach(var gameLocationCharacter in gameLocationCharacterService.PartyCharacters)
                 {
-                    heroes.Add((RulesetCharacterHero)gameLocationCharacter.RulesetCharacter);
+                    var hero = (RulesetCharacterHero)gameLocationCharacter.RulesetCharacter;
+                    heroes.Add(hero);
+
+                    var heroName = hero.Name + hero.SurName;
+                    if (!NextHeroClass.ContainsKey(heroName))
+                    {
+                        NextHeroClass.Add(heroName, hero.ClassesHistory[hero.ClassesHistory.Count - 1].FormatTitle());
+                    }
                 }
             }
 

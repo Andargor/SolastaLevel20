@@ -20,7 +20,7 @@ namespace SolastaLevel20.Patches
         {
             internal static void Postfix()
             {
-                ForceDeityOnAllClasses();
+                //ForceDeityOnAllClasses();
                 FixExperienceTable();
 
                 ClericBuilder.Load();
@@ -30,8 +30,8 @@ namespace SolastaLevel20.Patches
                 RogueBuilder.Load();
                 WizardBuilder.Load();
 
-                ServiceRepository.GetService<IInputService>().RegisterCommand(CTRL_SHIFT_RIGHT, 275, 304, 306, -1, -1, -1);
-                ServiceRepository.GetService<IInputService>().RegisterCommand(CTRL_SHIFT_LEFT, 276, 304, 306, -1, -1, -1);
+                //ServiceRepository.GetService<IInputService>().RegisterCommand(CTRL_SHIFT_RIGHT, 275, 304, 306, -1, -1, -1);
+                //ServiceRepository.GetService<IInputService>().RegisterCommand(CTRL_SHIFT_LEFT, 276, 304, 306, -1, -1, -1);
             }
         }
     }

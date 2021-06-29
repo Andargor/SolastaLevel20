@@ -19,7 +19,7 @@ namespace SolastaLevel20.Viewers
             if (UI.Slider("Max Allowed Classes", ref maxAllowedClasses, 1, 4, 2, "", UI.AutoWidth()))
             {
                 Main.Settings.maxAllowedClasses = maxAllowedClasses;
-                IsHeroesPoolDirty = true;
+                GetHeroesPool(true);
             }
         }
 
