@@ -89,8 +89,8 @@ namespace SolastaLevel20
 
                 Mod = new ModManager<Core, Settings>();
                 Mod.Enable(modEntry, assembly);
-                Menu = new MenuManager();
-                Menu.Enable(modEntry, assembly);
+                //Menu = new MenuManager();
+                //Menu.Enable(modEntry, assembly);
             }
             catch (Exception ex)
             {
