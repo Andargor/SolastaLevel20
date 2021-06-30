@@ -7,6 +7,8 @@ using static SolastaModApi.DatabaseHelper.SpellListDefinitions;
 using static SolastaModApi.Extensions.SpellListDefinitionExtensions;
 using static SolastaModApi.Extensions.FeatureDefinitionCastSpellExtensions;
 using static SolastaLevel20.Models.Features.AdditionalDamagePaladinImprovedDivineSmiteBuilder;
+using SolastaLevel20.Models.Features;
+using SolastaModApi.Infrastructure;
 
 namespace SolastaLevel20.Models.Classes
 {
@@ -39,16 +41,17 @@ namespace SolastaLevel20.Models.Classes
         public static void Load()
         {
             // add missing progression
-            Paladin.FeatureUnlocks.AddRange(new List<FeatureUnlockByLevel> {
+            Paladin.FeatureUnlocks.AddRange(
                 new FeatureUnlockByLevel(AdditionalDamagePaladinImprovedDivineSmite, 11),
                 new FeatureUnlockByLevel(FeatureSetAbilityScoreChoice, 12),
                 // TODO 14: Cleansing Touch
                 // TODO 15: Sacred Oath Feature
                 new FeatureUnlockByLevel(FeatureSetAbilityScoreChoice, 16),
-                // TODO 18: Aura Improvements
+                new FeatureUnlockByLevel(PowerPaladinAuraOfCourage18Builder.Instance, 18),
+                new FeatureUnlockByLevel(PowerPaladinAuraOfProtection18Builder.Instance, 18),
                 new FeatureUnlockByLevel(FeatureSetAbilityScoreChoice, 19)
                 // TODO 20: Sacred Oath Feature
-            });
+            );
 
             // add missing spell slots
             foreach (var slot in CastSpellPaladin.SlotsPerLevels)
