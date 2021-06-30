@@ -32,7 +32,7 @@ Attempt to bring all Solasta official heroes classes to level 20.
 		. 14: Cleasing Touch [PLANNED]
 		. 15: Sacred Oath Feature [PLANNED]
 		. 16: Ability Score Increase or Feat Choice
-		. 18: Aura Improvements [PLANNED]
+		. 18: Aura Improvements
 		. 19: Ability Score Increase or Feat Choice
 		. 20: Sacred Oath Feature [PLANNED]
 

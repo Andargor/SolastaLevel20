@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using SolastaModApi.Infrastructure;
+using SolastaLevel20.Models.Features;
 using static SolastaModApi.DatabaseHelper.CharacterClassDefinitions;
 using static SolastaModApi.DatabaseHelper.FeatureDefinitionCastSpells;
 using static SolastaModApi.DatabaseHelper.FeatureDefinitionFeatureSets;
@@ -7,8 +9,6 @@ using static SolastaModApi.DatabaseHelper.SpellListDefinitions;
 using static SolastaModApi.Extensions.SpellListDefinitionExtensions;
 using static SolastaModApi.Extensions.FeatureDefinitionCastSpellExtensions;
 using static SolastaLevel20.Models.Features.AdditionalDamagePaladinImprovedDivineSmiteBuilder;
-using SolastaLevel20.Models.Features;
-using SolastaModApi.Infrastructure;
 
 namespace SolastaLevel20.Models.Classes
 {
